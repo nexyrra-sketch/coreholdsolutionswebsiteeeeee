@@ -7,6 +7,7 @@ import "@/lib/fonts";
 import { BRAND } from "@/lib/brand";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -85,6 +86,14 @@ export default function LocaleLayout({
       "@type": "PostalAddress",
       addressCountry: "AE",
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: BRAND.whatsappNumber,
+      email: BRAND.email,
+      areaServed: "AE",
+      availableLanguage: ["en", "ar"],
+    },
   };
 
   const serviceJsonLd = {
@@ -112,6 +121,7 @@ export default function LocaleLayout({
         <Header locale={locale} dict={dict} />
         <main id="main">{children}</main>
         <Footer locale={locale} dict={dict} />
+        <WhatsAppButton dict={dict} />
       </body>
     </html>
   );

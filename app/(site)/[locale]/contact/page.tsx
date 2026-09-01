@@ -28,6 +28,14 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
           <a href={`mailto:${BRAND.email}`} className="mt-6 inline-block text-ink-900 underline underline-offset-4">
             {BRAND.email}
           </a>
+          <a
+            href={`https://wa.me/${BRAND.whatsappDigits}?text=${encodeURIComponent(dict.whatsapp.prefill)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 block text-ink-900 underline underline-offset-4"
+          >
+            {dict.whatsapp.label} · {BRAND.whatsappNumber}
+          </a>
         </div>
         <ContactForm dict={dict} locale={params.locale} />
       </div>

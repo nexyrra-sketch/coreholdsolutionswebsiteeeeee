@@ -390,7 +390,7 @@ const en = {
     },
     success: "Thanks — that's landed with our team. We'll be in touch within one business day.",
     error: "Something went wrong sending that. Please try again, or email us directly.",
-    directEmail: "hello@coreholdsolutions.com",
+    directEmail: "info@coreholdsolutions.com",
   },
 
   privacy: {
@@ -402,7 +402,7 @@ const en = {
       "What we collect: when you use the readiness calculator or contact form, we collect the business and contact details you provide — business name, contact name, email, phone number, revenue band, current invoicing method, and your calculated deadline.",
       "Why we collect it: to respond to your enquiry, to send you the results you asked for, and to follow up about CHS services. We do not sell your data.",
       "Where it's stored: your submission is stored in our lead database and is accessible to CoreholdSolutions staff for the purpose of following up with you.",
-      "Your rights: you can ask us to access, correct, or delete your information at any time by emailing hello@coreholdsolutions.com.",
+      "Your rights: you can ask us to access, correct, or delete your information at any time by emailing info@coreholdsolutions.com.",
     ],
   },
 
@@ -435,6 +435,12 @@ const en = {
       deadline: "Deadline",
       emailStatus: "Email",
     },
+  },
+
+  whatsapp: {
+    label: "Chat on WhatsApp",
+    ariaLabel: "Chat with CoreholdSolutions on WhatsApp",
+    prefill: "Hi CoreholdSolutions, I'd like to ask about UAE e-invoicing compliance.",
   },
 
   common: {

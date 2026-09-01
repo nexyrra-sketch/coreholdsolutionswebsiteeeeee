@@ -74,6 +74,14 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
             >
               {BRAND.email}
             </a>
+            <a
+              href={`https://wa.me/${BRAND.whatsappDigits}?text=${encodeURIComponent(dict.whatsapp.prefill)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-small text-paper-50/80 hover:text-paper-50"
+            >
+              {dict.whatsapp.label} · {BRAND.whatsappNumber}
+            </a>
           </div>
         </div>
 

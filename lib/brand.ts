@@ -6,5 +6,8 @@ export const BRAND = {
   fullAr: "كورهولد سوليوشنز",
   short: "CHS",
   domain: "coreholdsolutions.com",
-  email: "hello@coreholdsolutions.com",
+  email: "info@coreholdsolutions.com",
+  whatsappNumber: "+971503953988",
+  // wa.me wants digits only, no "+".
+  whatsappDigits: "971503953988",
 } as const;
