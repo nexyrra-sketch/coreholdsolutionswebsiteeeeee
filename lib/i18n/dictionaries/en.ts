@@ -6,9 +6,9 @@ const en = {
   meta: {
     siteName: "CoreholdSolutions",
     shortName: "CHS",
-    tagline: "UAE e-invoicing, handled.",
+    tagline: "UAE e-invoicing compliance, end to end.",
     ogDescription:
-      "CoreholdSolutions connects your accounting or ERP system to an accredited UAE e-invoicing provider, gets you compliant before your deadline, and keeps you that way every month.",
+      "CoreholdSolutions is the independent consultancy for UAE e-invoicing compliance — we establish what the law requires of your business, select and negotiate your accredited provider, architect and build the integration, and run it after go-live.",
   },
 
   nav: {
@@ -42,11 +42,13 @@ const en = {
 
   hero: {
     eyebrow: "Federal Decree-Law No. 16 of 2024 · UAE Mandatory E-Invoicing",
-    h1: "Your e-invoicing deadline is already on the calendar.",
+    h1: "Every business in the UAE has an e-invoicing deadline. Very few have a plan.",
     subhead:
-      "Every VAT-registered business in the UAE will send and receive invoices through an accredited e-invoicing system — on a schedule set by revenue, not by choice. We connect your existing accounting software to an accredited provider, do the technical work, and keep you compliant after that. You keep invoicing the way you already do.",
+      "Federal law now puts every VAT-registered business in the country on a fixed timeline to issue and receive invoices through an accredited provider. CoreholdSolutions is the consultancy that owns that problem end to end — establishing what the law requires of you specifically, selecting the right accredited provider, architecting and building the connection, and running it long after go-live. You keep invoicing the way you always have.",
     ctaPrimary: "Find your deadline",
-    ctaSecondary: "See how CHS works",
+    ctaSecondary: "How we work",
+    trustLine: "Independent of every accredited provider · Advisory, integration and managed compliance under one team",
+    scrollCue: "Scroll",
     countdown: {
       heading: "Time remaining until each deadline",
       largeLabel: "Large businesses",
@@ -117,6 +119,218 @@ const en = {
       title: "Enterprise & finance teams",
       body: "You're evaluating this on capability, reliability, and depth of ERP integration — SAP, Oracle, multi-entity structures. We scope the technical work properly, give you a real project plan, and stay accountable for the connection once it's live.",
     },
+  },
+
+  problem: {
+    eyebrow: "Why this goes wrong",
+    h2: "Nobody drowns in the technology. They drown in everything around it.",
+    intro:
+      "The UAE's e-invoicing mandate is not, on its own, a hard engineering problem. Businesses miss it anyway — and they miss it for the same four reasons, every time.",
+    points: [
+      {
+        n: "01",
+        title: "A vocabulary nobody was hired for",
+        body: "Peppol. PINT-AE. UBL XML. The five-corner model. None of it was in anyone's job description eighteen months ago, and all of it is now load-bearing. Teams lose weeks working out what is even being asked of them.",
+      },
+      {
+        n: "02",
+        title: "Vendors who all reach the same conclusion",
+        body: "Ask five providers to assess you and you will get five assessments that end with their own platform. None of them are lying. None of them are neutral either — and telling those two apart is not a fair thing to ask of a finance team already under a deadline.",
+      },
+      {
+        n: "03",
+        title: "A date that does not negotiate",
+        body: "Appointment deadlines and go-live dates are fixed in law and set by revenue band. There is no extension to apply for, no phased grace period to lean on, and no version of this where being late is quietly fine.",
+      },
+      {
+        n: "04",
+        title: "An owner who does not exist",
+        body: "Finance assumes IT has it. IT assumes finance has it. It surfaces as a real problem roughly ninety days out — at precisely the point where every remaining option is the expensive one.",
+      },
+    ],
+    closing: "We take all four of those off your desk. That is the entire job.",
+  },
+
+  pillars: {
+    eyebrow: "What we do",
+    h2: "Four disciplines. One accountable team.",
+    intro:
+      "Compliance programmes fail at the handoffs — between the advisor who scoped it, the vendor who sold it, and the integrator who built it. Each is holding a piece; none is holding the outcome. We don't hand off.",
+    items: [
+      {
+        n: "01",
+        title: "Compliance advisory",
+        summary: "Establishing precisely what the law requires of your business — not of businesses in general.",
+        body: "Your revenue tier, entity structure, VAT groupings and transaction types decide your obligations and your dates. We establish them formally and give you a written position you can hand to your board, your auditor, or your group finance function.",
+        detail: [
+          "Revenue-tier and deadline determination",
+          "Multi-entity and VAT-group scoping",
+          "Obligation and penalty-exposure assessment",
+          "A dated compliance roadmap with named owners",
+        ],
+      },
+      {
+        n: "02",
+        title: "Accredited-provider selection",
+        summary: "Choosing the provider that fits your business, and negotiating the terms you sign.",
+        body: "Accredited providers are not interchangeable. They differ on integration depth, on coverage, on commercial model, and — the thing that matters most and gets asked about least — on how they behave when something breaks at month-end. We run a structured evaluation against your requirements, then sit on your side of the negotiation.",
+        detail: [
+          "Requirements defined before any vendor conversation",
+          "Structured, scored provider evaluation",
+          "Commercial and contract review",
+          "We manage the provider relationship after signature",
+        ],
+      },
+      {
+        n: "03",
+        title: "Systems architecture & integration",
+        summary: "Deciding what should be connected — then building and proving the connection.",
+        body: "Before anything is integrated, someone has to ask whether the system you are on is the system you should stay on. We answer that honestly, including when the answer is that your current setup is perfectly fine. Then we build: invoice data mapped into PINT-AE, validated, tested end to end, and cut over in stages rather than overnight.",
+        detail: [
+          "Current-state systems and data review",
+          "ERP and accounting platform advisory",
+          "PINT-AE / UBL XML data mapping",
+          "End-to-end validation and failure testing",
+          "Staged cutover and team enablement",
+        ],
+      },
+      {
+        n: "04",
+        title: "Managed compliance operations",
+        summary: "Running it after go-live, which is where compliance is actually won or lost.",
+        body: "Going live is the middle of this project, not the end. From that day every invoice has to validate, transmit and reconcile — and the rules will change at least once. We monitor transmission, resolve rejections before they age into a filing problem, reconcile to your ledger monthly, and absorb regulatory change so your team doesn't have to track it.",
+        detail: [
+          "Transmission and acceptance monitoring",
+          "Rejection resolution before it ages",
+          "Monthly reconciliation against your ledger",
+          "Regulatory change management",
+        ],
+      },
+    ],
+    cta: "See how an engagement runs",
+  },
+
+  independence: {
+    eyebrow: "Where we sit",
+    h2: "On your side of the table.",
+    body: "CoreholdSolutions is not an accredited service provider, and we are not trying to become one. That is not a limitation we are apologising for — it is the reason our advice is worth anything. An accredited provider recommending an accredited provider is a sales call. We hold no reseller margin on any provider we recommend, so when we tell you one is the right fit, the only thing riding on it is whether we were right.",
+    factsHeading: "What accreditation actually demands",
+    facts: [
+      "AED 50,000+ in paid-up capital",
+      "AED 2.5 million in professional indemnity insurance",
+      "ISO 27001 and ISO 22301 certification",
+      "Two years of prior e-invoicing track record",
+      "A 90-day accreditation process",
+    ],
+    factsNote:
+      "That is a serious bar, and it is exactly why the accredited network is small and worth choosing carefully. It is also why we work alongside it rather than trying to replace it. If we ever sign a named provider partnership, this site will say so specifically.",
+  },
+
+  numbers: {
+    eyebrow: "The regulation, in figures",
+    h2: "None of these are our numbers. All of them are your deadline.",
+    items: [
+      {
+        value: 16,
+        prefix: "No. ",
+        suffix: "",
+        // Never animated: counting up to a statute number would briefly
+        // display "No. 12", "No. 14" — incorrect legal citations on the
+        // site of a compliance firm.
+        animate: false,
+        label: "Federal Decree-Law of 2024",
+        body: "The law that placed every VAT-registered business in the UAE on this timeline.",
+      },
+      {
+        value: 50,
+        prefix: "AED ",
+        suffix: "M",
+        animate: true,
+        label: "The line that decides your dates",
+        body: "At or above it, you are on the large-business track. Below it, the standard track.",
+      },
+      {
+        value: 5,
+        prefix: "",
+        suffix: "",
+        animate: true,
+        label: "Corners in the model",
+        body: "Your system, your provider, their provider, your customer — and the tax authority.",
+      },
+      {
+        value: 4,
+        prefix: "",
+        suffix: "",
+        animate: true,
+        label: "Fixed dates in the schedule",
+        body: "Two provider-appointment deadlines and two go-live dates. None of them move.",
+      },
+    ],
+    note:
+      "Figures reflect Federal Decree-Law No. 16 of 2024 and Ministerial Decisions No. 243 and 244 of 2025. Confirm your own position with the Federal Tax Authority or your tax advisor.",
+  },
+
+  path: {
+    eyebrow: "The engagement",
+    h2: "How a CHS engagement actually runs.",
+    intro:
+      "Four stages, in order, each ending in something concrete handed over. You always know which stage you are in and what you are waiting for.",
+    stages: [
+      {
+        n: "01",
+        label: "Assess",
+        title: "We establish your actual position.",
+        body: "Revenue tier, entity structure, current systems, transaction types — and the dates that follow from them. This is the stage where guessing gets eliminated, including ours.",
+        outcome: "You receive: a written compliance position and a dated roadmap.",
+      },
+      {
+        n: "02",
+        label: "Select",
+        title: "We choose your accredited provider with you.",
+        body: "Requirements first, vendors second. We score the accredited options against what your business actually needs, bring you a recommendation with the reasoning shown, and negotiate commercial terms alongside you.",
+        outcome: "You receive: a scored evaluation, a recommendation, and reviewed contract terms.",
+      },
+      {
+        n: "03",
+        label: "Build",
+        title: "We architect and prove the connection.",
+        body: "Your invoice data mapped into the required structured format, validated against real cases including the ones designed to fail, then cut over in stages. Your team is trained on the small number of things that genuinely change for them.",
+        outcome: "You receive: a tested, live connection and a documented cutover.",
+      },
+      {
+        n: "04",
+        label: "Operate",
+        title: "We run it, and keep running it.",
+        body: "Monitoring, rejection resolution, monthly reconciliation, and absorbing regulatory change as it lands. This is the stage that never ends, which is why we price it separately and say so plainly.",
+        outcome: "You receive: monthly reconciliation and a compliance record that holds up.",
+      },
+    ],
+    stageLabel: "Stage",
+  },
+
+  partners: {
+    eyebrow: "For accredited providers",
+    h2: "The implementation layer you would otherwise have to staff.",
+    body: "Accreditation is a capital, insurance and certification undertaking. What it is not is a delivery organisation. Providers are winning UAE mandates faster than they can hire integration consultants able to hold a conversation about SAP field mapping and a spreadsheet-based invoicing process in the same week, in Arabic and in English. That is the work we do — and we are glad to do it under your name.",
+    points: [
+      {
+        title: "Client-side delivery, to your standard",
+        body: "We implement against your onboarding specification and hand back a client who is live and stable, not a ticket queue.",
+      },
+      {
+        title: "SME volume without burning senior engineers",
+        body: "The long tail of smaller mandates is where provider margin quietly disappears. For us it is routine work.",
+      },
+      {
+        title: "Bilingual delivery on the ground",
+        body: "English and Arabic, with UAE finance teams, in the room where it matters.",
+      },
+      {
+        title: "Neutral by design",
+        body: "We recommend on fit and we work with more than one provider. That independence is precisely what makes a referral from us worth having.",
+      },
+    ],
+    cta: "Talk about a partnership",
   },
 
   calculator: {
@@ -290,9 +504,28 @@ const en = {
 
   about: {
     eyebrow: "About CHS",
-    h1: "We connect you to compliance. We don't pretend to be something we're not.",
+    h1: "A consultancy built around one regulation, and everything it touches.",
     intro:
-      "CoreholdSolutions is an integration, implementation, and advisory firm built around one UAE regulation with fixed, staggered deadlines. We're not an accredited service provider ourselves — we make sure the connection between your systems and one is correct, tested, and stays that way.",
+      "CoreholdSolutions is an independent advisory, architecture and implementation firm working on a single problem: getting UAE businesses compliant with mandatory e-invoicing, and keeping them there. We are deliberately specialised. A regulation with fixed dates, real financial exposure and a genuinely technical middle is not something to advise on part-time.",
+    principlesHeading: "How we work",
+    principles: [
+      {
+        title: "We tell you what you don't need.",
+        body: "The fastest way to waste money here is to buy a platform migration you were never required to make. If your current system is fine, we will say so — and it costs you one scoping call to find out.",
+      },
+      {
+        title: "We put dates on things.",
+        body: "Every commitment we make carries a date and a named owner. A roadmap without dates is a document, not a plan, and it will not survive contact with a deadline set in law.",
+      },
+      {
+        title: "We stay past go-live.",
+        body: "Anyone can sell you an integration. The real test is the first month-end after launch, when an invoice is rejected and nobody can say why. That is the moment we built this firm for.",
+      },
+      {
+        title: "We say what we are not.",
+        body: "We are not an accredited provider. We hold no reseller margin. We will not promise you a search ranking. Everything we do claim, we can stand behind — and we would rather be accurate than impressive.",
+      },
+    ],
     honesty: {
       title: "Where we stand on accreditation",
       body: "Becoming an FTA-Accredited Service Provider requires AED 50,000+ in paid-up capital, AED 2.5 million in professional insurance, ISO 27001 and ISO 22301 certification, two years of prior e-invoicing track record, and a 90-day accreditation process. CHS is not an ASP. We partner with one to deliver the connection your business needs. If and when we sign a named accredited-provider partnership, we'll say so here, specifically — until then, we'd rather be accurate than impressive.",
@@ -302,12 +535,12 @@ const en = {
       ghassan: {
         name: "Ghassan Adil",
         title: "Founder & Principal Consultant",
-        bio: "Ghassan founded CoreholdSolutions because he watched a regulation with hard, fixed deadlines get talked about like abstract policy — easy to put off, hard to act on. He built CHS around the opposite instinct: give a business its exact date, its exact exposure, and a clear path through it, in language that doesn't require a finance background to follow. Ghassan works directly with clients as principal consultant — scoping engagements, setting the technical direction of every integration, and staying accountable for the result rather than handing it off after the first call.",
+        bio: "Ghassan founded CoreholdSolutions on a straightforward observation: the UAE's e-invoicing mandate is not especially difficult, and businesses are going to miss it anyway — because it arrives as policy language rather than as a plan with dates and an owner. He built the firm to be that owner. As principal consultant he leads the assessment stage of every engagement personally: establishing what the law actually requires of that specific business, what meeting it will genuinely cost, and what the honest sequence of work is when the deadline cannot move. He is deliberately the person clients reach when something is difficult, not only when it is being sold.",
       },
       amro: {
         name: "Amro Idris",
-        title: "Chief Implementation Officer",
-        bio: "Amro runs the technical engine of CoreholdSolutions — the integration work, the data mapping, the validation testing, the part of the process that actually takes a business from “we have a deadline” to “we're live.” He oversees every client's connection into the accredited-provider network, from a single-entity QuickBooks setup to a multi-entity SAP environment, and owns the standard CHS holds itself to on every implementation: tested, validated, and working before we call it done.",
+        title: "Partner & Chief Solutions Architect",
+        bio: "Amro owns the technical position on every CHS engagement — which systems a client should be running, how their invoice data maps into PINT-AE without failing validation, how the connection to an accredited provider is architected and proven, and what the cutover looks like on the day it happens. He sets the standard the firm is measured against, and it is a demanding one: an integration is not finished when it transmits successfully, it is finished when it has survived a full cycle of real invoices including the ones that fail. He works across the full range, from a single-entity Zoho setup to multi-entity SAP environments, and is the reason CHS will tell a client their current system is adequate when it is.",
       },
     },
   },

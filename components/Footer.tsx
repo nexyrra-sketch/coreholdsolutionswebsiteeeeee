@@ -4,6 +4,7 @@ import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/i18n/path";
 import { BRAND } from "@/lib/brand";
 import ConcentricMotif from "./ConcentricMotif";
+import Logo from "./Logo";
 
 export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const year = new Date().getFullYear();
@@ -29,13 +30,12 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
       <div className="container-content relative py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-paper-50 text-small font-display font-semibold">
-                {BRAND.short}
-              </span>
-              <span className="font-display text-lg">{BRAND.fullEn}</span>
-              <span className="text-paper-50/50">/</span>
-              <span className="font-display text-lg">{BRAND.fullAr}</span>
+            {/* Both language forms of the name appear here regardless of the
+                active locale, per the brand brief. */}
+            <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <Logo tone="light" locale="en" />
+              <span aria-hidden="true" className="text-paper-50/25">/</span>
+              <span className="font-display-ar text-lg leading-none text-paper-50">{BRAND.fullAr}</span>
             </div>
             <p className="max-w-sm text-small text-paper-50/70">{dict.footer.description}</p>
           </div>

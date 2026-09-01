@@ -8,6 +8,7 @@ import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { switchLocalePath, localePath } from "@/lib/i18n/path";
 import { BRAND } from "@/lib/brand";
 import { LinkButton } from "./Button";
+import Logo from "./Logo";
 
 export default function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname() ?? `/${locale}`;
@@ -28,13 +29,8 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
         {dict.common.skipToContent}
       </a>
       <div className="container-content flex h-18 items-center justify-between gap-4">
-        <Link href={localePath(locale, "/")} className="flex items-center gap-2 shrink-0" aria-label={BRAND.fullEn}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-ink-950 text-small font-display font-semibold">
-            {BRAND.short}
-          </span>
-          <span className="hidden sm:block font-display text-lg leading-none">
-            {locale === "ar" ? BRAND.fullAr : BRAND.fullEn}
-          </span>
+        <Link href={localePath(locale, "/")} className="shrink-0" aria-label={BRAND.fullEn}>
+          <Logo tone="dark" locale={locale} hideWordmarkOnMobile />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">

@@ -8,6 +8,15 @@
   --font-body: "Inter Variable", -apple-system, "Segoe UI", system-ui, sans-serif;
   --font-display-ar: "Noto Naskh Arabic Variable", "Times New Roman", serif;
   --font-body-ar: "Noto Sans Arabic Variable", "Segoe UI", system-ui, sans-serif;
+
+  /* Motion language.
+     Expo-out: leaves fast, settles slowly. Reads as weight and precision —
+     a vault door swinging, not a notification popping. Every transition on
+     this site uses one of these two curves so the whole page feels like it
+     was built by one hand. */
+  --ease-vault: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-vault-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-reveal: 900ms;
 }
 
 @layer base {
@@ -50,9 +59,148 @@
   .sr-only-focusable {
     @apply absolute -translate-y-24 opacity-0 focus:translate-y-0 focus:opacity-100 transition-transform;
   }
+
+  /* A hairline that fades out at both ends — used to separate sections
+     without the hard rule of a full-width border. */
+  .rule-fade {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D9D2C2 18%, #D9D2C2 82%, transparent);
+  }
+  .rule-fade-light {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(250, 248, 244, 0.22) 18%, rgba(250, 248, 244, 0.22) 82%, transparent);
+  }
+
+  /* Depth on the dark sections: a soft off-centre light source, so a large
+     block of near-black reads as a lit space rather than a flat fill. */
+  .vault-vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 55% at 72% 12%, rgba(201, 154, 78, 0.10), transparent 68%),
+      radial-gradient(45% 45% at 10% 90%, rgba(233, 203, 153, 0.05), transparent 70%);
+  }
+
+  /* Card that lifts fractionally and warms its edge on hover. Transform and
+     border only — no box-shadow animation, which is expensive to repaint. */
+  .card-lift {
+    transition:
+      transform 450ms var(--ease-vault),
+      border-color 450ms var(--ease-vault),
+      background-color 450ms var(--ease-vault);
+  }
+  .card-lift:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  .progress-origin {
+    transform-origin: left center;
+  }
+  [dir="rtl"] .progress-origin {
+    transform-origin: right center;
+  }
 }
 
-/* Respect the user's motion preference everywhere, not just on hand-picked elements. */
+/* ---------------------------------------------------------------------------
+   Scroll reveal system
+   ---------------------------------------------------------------------------
+   The hidden state lives here rather than in JavaScript so that two failure
+   modes both fail *open*: a visitor who asked for reduced motion, and a
+   visitor whose JavaScript never runs (see the <noscript> block in the site
+   layout). In both cases the content is simply visible.
+
+   Only vertical and scale movement — never horizontal — because horizontal
+   motion has to be mirrored for Arabic and quietly looks wrong if it isn't.
+--------------------------------------------------------------------------- */
+.chs-reveal {
+  opacity: 0;
+  transition:
+    opacity var(--dur-reveal) var(--ease-vault),
+    transform var(--dur-reveal) var(--ease-vault);
+  will-change: opacity, transform;
+}
+.chs-reveal--up {
+  transform: translate3d(0, 26px, 0);
+}
+.chs-reveal--rise-lg {
+  transform: translate3d(0, 56px, 0);
+}
+.chs-reveal--scale {
+  transform: scale(0.965);
+}
+.chs-reveal--fade {
+  transform: none;
+}
+.chs-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* Once it has arrived, stop hinting the compositor. */
+.chs-reveal.is-visible {
+  will-change: auto;
+}
+
+/* Slow rotation for the decorative dial rings. 90s is deliberately almost
+   imperceptible — you notice it only if you stop and look. */
+@keyframes vault-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-dial {
+  animation: vault-rotate 90s linear infinite;
+}
+.animate-dial-reverse {
+  animation: vault-rotate 140s linear infinite reverse;
+}
+
+/* The stroke on the pinned-path ring draws itself in. */
+@keyframes draw-ring {
+  from { stroke-dashoffset: var(--ring-length); }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Hero scroll cue — a short line that falls and resets. */
+@keyframes cue-drift {
+  0%   { transform: translateY(-60%); opacity: 0; }
+  35%  { opacity: 1; }
+  100% { transform: translateY(120%); opacity: 0; }
+}
+.animate-cue {
+  animation: cue-drift 2.6s var(--ease-vault-soft) infinite;
+}
+
+/* ---------------------------------------------------------------------------
+   Pinned engagement path
+   ---------------------------------------------------------------------------
+   Only above lg do the four stages stack on top of each other and cross-fade;
+   below that they're an ordinary vertical list, because a pinned scroll
+   section fights with touch momentum and with mobile browser chrome that
+   resizes the viewport mid-gesture. Driving this from a data attribute rather
+   than an inline style is what lets the same markup do both.
+--------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .path-stage {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition:
+      opacity 700ms var(--ease-vault),
+      transform 700ms var(--ease-vault);
+    pointer-events: none;
+  }
+  .path-stage[data-active="true"] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Respect the visitor's motion preference everywhere.
+   This has to also neutralise the reveal system's hidden state, or a
+   reduced-motion visitor would be left looking at an empty page.
+--------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -61,5 +209,13 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .chs-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .animate-dial,
+  .animate-dial-reverse {
+    animation: none !important;
   }
 }

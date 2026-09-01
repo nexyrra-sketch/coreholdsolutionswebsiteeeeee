@@ -63,6 +63,13 @@ const config: Config = {
       },
       transitionDuration: {
         250: "250ms",
+        450: "450ms",
+        700: "700ms",
+        900: "900ms",
+      },
+      transitionTimingFunction: {
+        vault: "cubic-bezier(0.16, 1, 0.3, 1)",
+        "vault-soft": "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       keyframes: {
         "fade-up": {

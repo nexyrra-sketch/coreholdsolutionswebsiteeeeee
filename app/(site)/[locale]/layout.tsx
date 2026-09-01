@@ -8,6 +8,7 @@ import { BRAND } from "@/lib/brand";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollProgress from "@/components/motion/ScrollProgress";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -108,6 +109,13 @@ export default function LocaleLayout({
   return (
     <html lang={meta.htmlLang} dir={meta.dir}>
       <body>
+        {/* Scroll reveals hide their content until JavaScript observes them.
+            If JavaScript never runs, this un-hides everything so the page is
+            still fully readable rather than a column of blank space. */}
+        <noscript>
+          <style>{`.chs-reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+        <ScrollProgress />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
