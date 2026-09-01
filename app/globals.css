@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-display: "Newsreader Variable", Georgia, "Times New Roman", serif;
+  --font-body: "Inter Variable", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-display-ar: "Noto Naskh Arabic Variable", "Times New Roman", serif;
+  --font-body-ar: "Noto Sans Arabic Variable", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-paper-50 text-ink-950 font-body antialiased;
+  }
+  [dir="rtl"] body {
+    @apply font-body-ar;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+    @apply font-display-ar;
+  }
+
+  /* Visible focus states everywhere — accessibility baseline, not decorative. */
+  :focus-visible {
+    outline: 2px solid #B9863F;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: #E9CB99;
+    color: #12141A;
+  }
+}
+
+@layer utilities {
+  .container-content {
+    @apply mx-auto max-w-content px-6 sm:px-8 lg:px-12;
+  }
+  .container-prose {
+    @apply mx-auto max-w-prose px-6;
+  }
+  .sr-only-focusable {
+    @apply absolute -translate-y-24 opacity-0 focus:translate-y-0 focus:opacity-100 transition-transform;
+  }
+}
+
+/* Respect the user's motion preference everywhere, not just on hand-picked elements. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
