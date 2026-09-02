@@ -49,6 +49,24 @@ const en = {
     ctaSecondary: "How we work",
     trustLine: "Independent of every accredited provider · Advisory, integration and managed compliance under one team",
     scrollCue: "Scroll",
+    questionsHeading: "The three questions we answer for you",
+    questions: [
+      {
+        n: "01",
+        q: "What does the law actually require of us?",
+        a: "Your revenue tier, your dates, your entity structure and your exposure — established formally, in writing, not estimated.",
+      },
+      {
+        n: "02",
+        q: "Which accredited provider should we appoint?",
+        a: "Scored against your requirements by an advisor holding no reseller margin with any of them.",
+      },
+      {
+        n: "03",
+        q: "Which systems should we run, and how do they connect?",
+        a: "An honest architecture answer — including the cases where your current setup is already the right one.",
+      },
+    ],
     countdown: {
       heading: "Time remaining until each deadline",
       largeLabel: "Large businesses",
@@ -118,6 +136,109 @@ const en = {
     enterprise: {
       title: "Enterprise & finance teams",
       body: "You're evaluating this on capability, reliability, and depth of ERP integration — SAP, Oracle, multi-entity structures. We scope the technical work properly, give you a real project plan, and stay accountable for the connection once it's live.",
+    },
+  },
+
+  explainer: {
+    eyebrow: "First, the plain version",
+    h2: "What e-invoicing actually is, in one diagram.",
+    intro:
+      "Most explanations of this start with the vocabulary. Here is the one that starts with your invoice. Today you send a PDF and hope it gets paid. Under the mandate, your system sends structured data to an accredited provider, that provider delivers it to your customer's provider, and the tax authority receives a report of the transaction. Five parties. You are directly responsible for one of them — and for choosing the second.",
+    nodes: [
+      {
+        n: "1",
+        title: "Your system",
+        body: "QuickBooks, Zoho, Xero, SAP, Oracle — or a spreadsheet. The invoice still starts here, the way it always has.",
+      },
+      {
+        n: "2",
+        title: "Your accredited provider",
+        body: "Converts your invoice into the required format and transmits it. Appointing one is a legal obligation with a fixed deadline, not a software preference.",
+      },
+      {
+        n: "3",
+        title: "Your customer's provider",
+        body: "Receives the invoice on their behalf across the network. Nothing here is yours to manage.",
+      },
+      {
+        n: "4",
+        title: "Your customer's system",
+        body: "The invoice lands as structured data their software can read and process without anyone retyping it.",
+      },
+    ],
+    fifth: {
+      n: "5",
+      title: "The Federal Tax Authority",
+      body: "Receives reporting data on the transaction. This is the corner that makes e-invoicing a tax obligation rather than a convenience — and the reason getting the first two right matters.",
+    },
+    scopeLabel: "Where CoreholdSolutions works",
+    scopeBody:
+      "Corners 1 and 2, and everything behind them: deciding what you actually need, selecting and appointing the provider, mapping and testing the connection, then running it every month after go-live. Corners 3, 4 and 5 simply happen — provided the first two were built correctly.",
+    jargonNote:
+      "Peppol is the network this travels over. PINT-AE is the required data format. You will never have to touch either — but they are what the acronyms in every vendor deck are referring to, and you should not have to pretend to recognise them.",
+    cta: "See every term explained",
+  },
+
+  guidance: {
+    eyebrow: "The two decisions",
+    h2: "Which provider. Which systems. These are the decisions that cost money later.",
+    intro:
+      "Nearly everything else in this project is execution — difficult, but knowable. These two are judgement calls, made once, early, usually with incomplete information and a vendor in the room. This is how we make them.",
+    provider: {
+      title: "Choosing your accredited provider",
+      lead: "We score the accredited options against your requirements before you sit in a single demo. The criteria that actually predict whether you will still be happy in eighteen months:",
+      criteria: [
+        {
+          title: "Depth of integration with your actual stack",
+          body: "Not “supports SAP” — supports your SAP, with your customisations, your entity structure and your document types.",
+        },
+        {
+          title: "Behaviour when something fails at month-end",
+          body: "The single best predictor of a good provider, and the one question nobody thinks to ask during a sales call.",
+        },
+        {
+          title: "Commercial model as your volume grows",
+          body: "Per-invoice pricing that looks cheap at 100 invoices a month can be the most expensive option on the table at 2,000.",
+        },
+        {
+          title: "Support in Arabic and English, in UAE hours",
+          body: "A support desk eight time zones away is a materially different product from the one demonstrated to you.",
+        },
+        {
+          title: "Financial stability and roadmap",
+          body: "You are appointing this provider against a legal obligation that does not expire. Their solvency quietly becomes your problem.",
+        },
+      ],
+      close:
+        "We hold no reseller margin with any provider, so the recommendation you receive is the one we would act on ourselves.",
+    },
+    systems: {
+      title: "Choosing your systems",
+      lead: "Your current setup decides most of the effort. Here is what each starting point genuinely means — including the cases where the right answer is to change nothing at all.",
+      rows: [
+        {
+          system: "QuickBooks, Zoho or Xero",
+          effort: "Shortest path",
+          body: "Standard integration routes exist. Usually no platform change is needed, and we would tell you to keep what you have.",
+        },
+        {
+          system: "SAP or Oracle",
+          effort: "Deeper scoping",
+          body: "The mapping is well understood, but multi-entity structures and customisations need proper design before anyone writes an integration.",
+        },
+        {
+          system: "Custom or in-house",
+          effort: "Assessment first",
+          body: "Entirely dependent on data quality and how invoice records are structured. Establishing that is what the first technical session is for.",
+        },
+        {
+          system: "Spreadsheets or manual",
+          effort: "Start earliest",
+          body: "The real project is moving onto a connected system. That is a larger change than the compliance work itself — which is precisely why it cannot be left late.",
+        },
+      ],
+      close:
+        "We are not resellers of any accounting platform either. If your current system is adequate, keeping it is the cheapest correct answer, and we will say so.",
     },
   },
 

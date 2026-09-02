@@ -6,3 +6,6 @@ out
 *.db
 npm-debug.log*
 .DS_Store
+data/
+*.db-shm
+*.db-wal

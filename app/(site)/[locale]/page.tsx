@@ -10,6 +10,7 @@ import ConcentricMotif from "@/components/ConcentricMotif";
 import Countdown from "@/components/Countdown";
 import Calculator from "@/components/Calculator";
 import PinnedPath from "@/components/PinnedPath";
+import FiveCorner from "@/components/FiveCorner";
 import Reveal from "@/components/motion/Reveal";
 import Parallax from "@/components/motion/Parallax";
 import CountUp from "@/components/motion/CountUp";
@@ -67,6 +68,27 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             <p className="mt-8 max-w-xl text-small text-paper-50/45">{dict.hero.trustLine}</p>
           </Reveal>
 
+          {/* The consulting role, stated within the first screen rather than
+              left for the visitor to infer further down the page. */}
+          <div className="mt-16">
+            <Reveal variant="fade" delay={460}>
+              <p className="text-micro font-semibold uppercase tracking-widest text-brass-200">
+                {dict.hero.questionsHeading}
+              </p>
+            </Reveal>
+            <div className="mt-8 grid gap-8 border-t border-paper-50/15 pt-8 sm:grid-cols-3 sm:gap-10">
+              {dict.hero.questions.map((item, i) => (
+                <Reveal key={item.n} variant="up" delay={520 + i * 90}>
+                  <div>
+                    <span className="font-display text-small text-brass-400">{item.n}</span>
+                    <p className="mt-2 font-display text-lg leading-snug text-paper-50">{item.q}</p>
+                    <p className="mt-2 text-small leading-relaxed text-paper-50/60">{item.a}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
           <Reveal variant="up" delay={480}>
             <div className="mt-16">
               <Countdown dict={dict} largeTarget={DEADLINES.large.live} smeTarget={DEADLINES.sme.live} />
@@ -116,6 +138,32 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
           <Reveal variant="fade" delay={200}>
             <p className="mt-12 max-w-3xl text-small text-paper-50/35">{dict.numbers.note}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= WHAT E-INVOICING ACTUALLY IS ================= */}
+      <section id="what-is-e-invoicing" className="vault-vignette relative overflow-hidden bg-ink-950 pb-section-y text-paper-50">
+        <div className="container-content relative">
+          <div className="rule-fade-light mb-16" />
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow tone="light">{dict.explainer.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2 text-paper-50">{dict.explainer.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-paper-50/75">{dict.explainer.intro}</p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16">
+            <FiveCorner dict={dict} />
+          </div>
+
+          <Reveal variant="fade" delay={140}>
+            <div className="mt-12">
+              <LinkButton href={localePath(locale, "/glossary")} variant="secondary">
+                {dict.explainer.cta}
+              </LinkButton>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -192,6 +240,75 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
               </LinkButton>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ================= THE TWO DECISIONS ================= */}
+      <section id="guidance" className="bg-paper-50 py-section-y">
+        <div className="container-content">
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow>{dict.guidance.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2">{dict.guidance.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-ink-700">{dict.guidance.intro}</p>
+            </div>
+          </Reveal>
+
+          {/* --- Which provider --- */}
+          <div className="mt-20">
+            <Reveal variant="up">
+              <div className="max-w-2xl border-t-2 border-brass-500 pt-6">
+                <h3 className="font-display text-h3">{dict.guidance.provider.title}</h3>
+                <p className="mt-4 leading-relaxed text-ink-700">{dict.guidance.provider.lead}</p>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+              {dict.guidance.provider.criteria.map((c, i) => (
+                <Reveal key={c.title} variant="up" delay={(i % 3) * 80}>
+                  <div className="h-full border-t border-line pt-5">
+                    <h4 className="font-display text-lg leading-snug">{c.title}</h4>
+                    <p className="mt-2 text-small leading-relaxed text-ink-600">{c.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal variant="fade" delay={120}>
+              <p className="mt-8 max-w-2xl border-s-2 border-brass-500 ps-5 text-ink-800">
+                {dict.guidance.provider.close}
+              </p>
+            </Reveal>
+          </div>
+
+          {/* --- Which systems --- */}
+          <div className="mt-24">
+            <Reveal variant="up">
+              <div className="max-w-2xl border-t-2 border-brass-500 pt-6">
+                <h3 className="font-display text-h3">{dict.guidance.systems.title}</h3>
+                <p className="mt-4 leading-relaxed text-ink-700">{dict.guidance.systems.lead}</p>
+              </div>
+            </Reveal>
+
+            <div className="mt-10">
+              {dict.guidance.systems.rows.map((row, i) => (
+                <Reveal key={row.system} variant="up" delay={i * 70}>
+                  <div className="grid gap-x-8 gap-y-2 border-t border-line py-6 md:grid-cols-[15rem_10rem_1fr] md:items-baseline">
+                    <p className="font-display text-lg">{row.system}</p>
+                    <p className="text-micro font-semibold uppercase tracking-widest text-brass-600">
+                      {row.effort}
+                    </p>
+                    <p className="leading-relaxed text-ink-700">{row.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+              <div className="border-t border-line" />
+            </div>
+
+            <Reveal variant="fade" delay={120}>
+              <p className="mt-8 max-w-2xl border-s-2 border-brass-500 ps-5 text-ink-800">
+                {dict.guidance.systems.close}
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
