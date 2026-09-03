@@ -94,6 +94,23 @@ export default function LocaleLayout({
       "@type": "PostalAddress",
       addressCountry: "AE",
     },
+    areaServed: [
+      "Abu Dhabi",
+      "Dubai",
+      "Sharjah",
+      "Ajman",
+      "Umm Al Quwain",
+      "Ras Al Khaimah",
+      "Fujairah",
+    ],
+    knowsAbout: [
+      "UAE e-invoicing",
+      "Federal Tax Authority e-invoicing mandate",
+      "PINT-AE UBL invoice standard",
+      "Peppol five-corner model",
+      "Accredited Service Provider selection",
+      "Federal Decree-Law No. 16 of 2024",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",

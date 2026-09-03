@@ -1,0 +1,79 @@
+import type { Article } from "../types";
+
+export const uaeChoosingAProvider: Article = {
+  slug: "how-to-choose-an-accredited-service-provider",
+  published: "2026-09-03",
+  readingMinutes: 7,
+  content: {
+    en: {
+      title: "How to choose an Accredited Service Provider in the UAE",
+      description:
+        "Every in-scope business now needs to appoint an Accredited Service Provider for UAE e-invoicing. Here is what the role actually does, and the questions worth asking before you sign anything.",
+      intro:
+        "The e-invoicing mandate does not let you connect to the Federal Tax Authority's system directly. You connect through an Accredited Service Provider — a vendor certified by the FTA to move your invoices onto the Peppol network in the required PINT-AE format. That single design choice is why 'which provider' has become the most consequential decision in most companies' rollout, and the one businesses tend to research least.",
+      body: [
+        { type: "h2", text: "What the role actually is" },
+        {
+          type: "p",
+          text: "An Accredited Service Provider sits between your accounting or ERP system and the Federal Tax Authority. It takes the invoice data your business already generates, converts it into the PINT-AE UBL format the mandate requires, and transmits it across the Peppol network using the five-corner model — your system, your provider, the recipient's provider, the recipient's system, and the Authority receiving a copy of the data in near real time.",
+        },
+        {
+          type: "p",
+          text: "That means the provider is not a reporting tool you check occasionally. It is live infrastructure sitting inside your invoice-to-cash process. If it goes down, or maps your data incorrectly, or cannot keep pace with your invoice volume, that is not a support ticket — it is a compliance failure with a daily fine attached, and potentially a stalled invoice you cannot legally send.",
+        },
+        { type: "h2", text: "The questions worth asking before you sign" },
+        { type: "h3", text: "Integration, not just accreditation" },
+        {
+          type: "p",
+          text: "Being on the FTA's accredited list is table stakes, not a differentiator — it tells you a provider is legally allowed to operate, not that it is a good fit for your systems. The real question is how it connects to what you already run. Does it have a built connector for your ERP or accounting platform, or is it proposing custom integration work? A custom build is not disqualifying, but it changes your timeline and your cost, and it means testing against your actual data rather than a demo environment.",
+        },
+        { type: "h3", text: "What happens to your data" },
+        {
+          type: "p",
+          text: "Ask where invoice data is processed and stored, for how long, and under what jurisdiction. Ask what happens to your historical data if you switch providers later — whether you can export it, and in what format. A provider that cannot answer this cleanly is a provider you should be cautious about building years of financial records inside.",
+        },
+        { type: "h3", text: "How failure is handled" },
+        {
+          type: "p",
+          text: "Two of the six penalties in Cabinet Decision No. 106 of 2025 exist specifically for system failures — one obligation on you as the issuer, one on the recipient, each carrying a daily fine. Ask a provider directly what its uptime commitment is, what its incident notification process looks like, and how quickly you would know if invoices were failing to transmit. A provider that has not thought about this will not be able to answer quickly.",
+        },
+        { type: "h3", text: "Pricing structure, not just the sticker price" },
+        {
+          type: "p",
+          text: "Per-invoice pricing, flat monthly fees, tiered volume bands, one-off integration charges — providers structure this differently, and the cheapest quote is not always the cheapest outcome once volume grows or a custom integration is added midway. Ask for the full pricing structure in writing, including what happens if your invoice volume changes significantly, before comparing any two quotes against each other.",
+        },
+        { type: "h3", text: "Whether the relationship has a reseller margin baked in" },
+        {
+          type: "p",
+          text: "Some integration partners are also resellers of specific providers, which means their recommendation is not independent — they are paid more for steering you toward the provider they resell. That is not necessarily bad advice, but it is worth knowing whose interest is being served before you take the recommendation at face value.",
+        },
+        { type: "h2", text: "Red flags worth taking seriously" },
+        {
+          type: "ul",
+          items: [
+            "Vague or evasive answers about uptime, incident handling, or data export — these are operational questions with concrete answers, and a provider that has run this before should have them ready.",
+            "Pressure to sign before you have seen the actual integration scope for your specific ERP — a generic proposal that has not looked at your systems is not yet a real quote.",
+            "No clear answer on what happens to your data if you leave — a provider confident in its service should not be uneasy about your exit path.",
+            "A single point of contact who cannot bring in technical staff to answer integration questions before contract signature.",
+          ],
+        },
+        { type: "h2", text: "Why timing changes the calculation" },
+        {
+          type: "p",
+          text: "Businesses with AED 50 million or more in annual revenue must have a provider appointed by 30 October 2026 and be live by 1 January 2027. Everyone else has until 31 March 2027 to appoint and 1 July 2027 to go live. The second date range covers almost every business in the country under the threshold, which means the queue for provider onboarding, data mapping and testing in early 2027 will not be short. Starting the evaluation now is not caution for its own sake — it is the only way to avoid being one of the businesses still negotiating scope a month before the deadline.",
+        },
+        {
+          type: "callout",
+          title: "Where CoreholdSolutions fits",
+          text: "We are not an Accredited Service Provider ourselves, and we hold no reseller margin with any provider we recommend. Our role is to sit on your side of the table — mapping your actual systems and invoice volumes against what different providers offer, running the evaluation questions above with real answers instead of marketing copy, and managing the integration so the provider relationship is one part of a project you control rather than the whole of it.",
+        },
+      ],
+      sources: [
+        {
+          label: "Cabinet Decision No. 106 of 2025 on Violations and Administrative Penalties — Ministry of Finance (PDF)",
+          url: "https://mof.gov.ae/wp-content/uploads/2025/12/Cabinet-Decision-Violations-and-Penalties-eInvoicing-final-version-en-8.12.25.pdf",
+        },
+      ],
+    },
+  },
+};
