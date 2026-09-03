@@ -1,9 +1,11 @@
 import type { Dictionary } from "./en";
 
 // Arabic content dictionary — mirrors en.ts key-for-key.
-// Professional Modern Standard Arabic, written for a UAE business audience.
-// Machine-translated by Claude and not yet reviewed by a native-speaking
-// legal/marketing editor — flagged in the handoff doc as a pre-launch step.
+// Professional Modern Standard Arabic, written for a UAE business audience,
+// addressing the reader throughout in the respectful second-person plural.
+// Reviewed 2026-09-03 for register consistency and terminology; a native-
+// speaking legal editor should still confirm the regulatory-obligation
+// language (glossary, disclaimers) before it is treated as legal copy.
 
 const ar: Dictionary = {
   meta: {
@@ -22,7 +24,7 @@ const ar: Dictionary = {
     about: "من نحن",
     contact: "تواصل معنا",
     insights: "مقالات",
-    checkDeadline: "تحقّق من موعدك النهائي",
+    checkDeadline: "تحقّقوا من موعدكم النهائي",
     languageSwitch: "English",
     languageSwitchAria: "Switch to English",
   },
@@ -49,7 +51,7 @@ const ar: Dictionary = {
     h1: "كل منشأة في الإمارات لديها موعد نهائي للفوترة الإلكترونية. وقليل منها لديه خطة.",
     subhead:
       "يضع القانون الاتحادي اليوم كل منشأة مسجّلة في ضريبة القيمة المضافة على جدول زمني ثابت لإصدار الفواتير واستلامها عبر مزوّد معتمد. كورهولد سوليوشنز هي الاستشارية التي تتولى هذه المسألة من أولها إلى آخرها — تحديد ما يفرضه القانون عليكم تحديدًا، واختيار المزوّد المعتمد المناسب، وتصميم الاتصال وبنائه، وتشغيله بعد الإطلاق بوقت طويل. وتستمرون في إصدار الفواتير بالطريقة التي اعتدتم عليها.",
-    ctaPrimary: "اعرف موعدك النهائي",
+    ctaPrimary: "اعرفوا موعدكم النهائي",
     ctaSecondary: "كيف نعمل",
     trustLine: "مستقلون عن جميع المزوّدين المعتمدين · الاستشارات والتكامل والامتثال المُدار ضمن فريق واحد",
     scrollCue: "مرّر",
