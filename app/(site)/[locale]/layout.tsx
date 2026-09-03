@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollProgress from "@/components/motion/ScrollProgress";
+import Analytics from "@/components/Analytics";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -59,6 +60,12 @@ export async function generateMetadata({
       ],
       apple: "/apple-touch-icon.png",
     },
+    // Google Search Console's "HTML tag" verification method — only
+    // rendered once GOOGLE_SITE_VERIFICATION is set, so it's a no-op
+    // until Search Console gives us a real value.
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+      : {}),
   };
 }
 
@@ -116,6 +123,7 @@ export default function LocaleLayout({
           <style>{`.chs-reveal{opacity:1!important;transform:none!important}`}</style>
         </noscript>
         <ScrollProgress />
+        <Analytics />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

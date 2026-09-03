@@ -27,7 +27,7 @@ const en = {
     companyFull: "CoreholdSolutions",
     companyFullAr: "كورهولد سوليوشنز",
     description:
-      "An integration and implementation partner for UAE e-invoicing compliance — not an accredited service provider itself.",
+      "The independent consultancy for UAE e-invoicing compliance — advisory, accredited-provider selection, integration and managed operations, under one team. Not an accredited service provider itself.",
     quickLinksHeading: "Site",
     resourcesHeading: "Resources",
     contactHeading: "Contact",
