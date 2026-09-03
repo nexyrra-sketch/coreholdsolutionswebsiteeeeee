@@ -78,13 +78,18 @@ export default function ArticlePage({ params }: { params: Params }) {
     ],
   };
 
+  // UAE local time (+04:00, no DST) — Google's Rich Results Test flags a
+  // bare date as "missing a timezone" for these fields, so give it one.
+  const isoWithTz = (dateOnly: string) => `${dateOnly}T09:00:00+04:00`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: content.title,
     description: content.description,
-    datePublished: article.published,
-    dateModified: article.updated ?? article.published,
+    image: `${base}/og-image.png`,
+    datePublished: isoWithTz(article.published),
+    dateModified: isoWithTz(article.updated ?? article.published),
     inLanguage: locale === "ar" ? "ar-AE" : "en-AE",
     mainEntityOfPage: `${base}/${locale}/insights/${article.slug}`,
     author: { "@type": "Organization", name: BRAND.fullEn, url: base },
