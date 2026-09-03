@@ -3,9 +3,10 @@ import type { Article, ArticleContent } from "./types";
 import { uaeEInvoicingPenalties } from "./articles/uae-e-invoicing-penalties";
 import { uaeChoosingAProvider } from "./articles/how-to-choose-an-accredited-service-provider";
 import { uaeSmeGuide } from "./articles/uae-e-invoicing-guide-for-smes";
+import { uaeProviderDirectory } from "./articles/uae-accredited-e-invoicing-service-providers";
 
 /** Every article, in no particular order — sorting happens in the helpers. */
-const ALL: Article[] = [uaeEInvoicingPenalties, uaeChoosingAProvider, uaeSmeGuide];
+const ALL: Article[] = [uaeEInvoicingPenalties, uaeChoosingAProvider, uaeSmeGuide, uaeProviderDirectory];
 
 /** Newest first. */
 function byNewest(a: Article, b: Article) {
