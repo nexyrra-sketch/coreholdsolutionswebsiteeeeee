@@ -68,6 +68,16 @@ export default function ArticlePage({ params }: { params: Params }) {
   const t = dict.insights;
   const base = `https://${BRAND.domain}`;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: dict.nav.home, item: `${base}/${locale}` },
+      { "@type": "ListItem", position: 2, name: t.eyebrow, item: `${base}/${locale}/insights` },
+      { "@type": "ListItem", position: 3, name: content.title, item: `${base}/${locale}/insights/${article.slug}` },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -92,6 +102,11 @@ export default function ArticlePage({ params }: { params: Params }) {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <Section tone="ink" className="pt-20 pb-14">
