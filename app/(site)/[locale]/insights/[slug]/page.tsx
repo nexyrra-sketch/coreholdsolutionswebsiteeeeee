@@ -8,7 +8,7 @@ import { BRAND } from "@/lib/brand";
 import { Section, Eyebrow } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
 import ArticleBody from "@/components/ArticleBody";
-import { articleRoutes, getArticle, articleLocales } from "@/lib/insights";
+import { articleRoutes, getArticle, articleLocales, listArticles } from "@/lib/insights";
 
 type Params = { locale: Locale; slug: string };
 
@@ -127,6 +127,32 @@ export default function ArticlePage({ params }: { params: Params }) {
             </ul>
           </div>
         ) : null}
+
+        {(() => {
+          const related = listArticles(locale).filter((a) => a.slug !== article.slug);
+          if (!related.length) return null;
+          return (
+            <div className="mx-auto max-w-2xl mt-14 border-t border-line pt-8">
+              <h2 className="font-display text-lg text-ink-950 mb-4">{t.relatedHeading}</h2>
+              <ul className="space-y-3">
+                {related.map((a) => {
+                  const c = a.content[locale];
+                  if (!c) return null;
+                  return (
+                    <li key={a.slug}>
+                      <Link
+                        href={localePath(locale, `/insights/${a.slug}`)}
+                        className="text-small font-medium text-ink-700 underline underline-offset-4 decoration-line hover:text-brass-600 hover:decoration-brass-500 transition-colors"
+                      >
+                        {c.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })()}
 
         <div className="mx-auto max-w-2xl mt-12">
           <Link

@@ -819,6 +819,7 @@ const en = {
       "Tell us your revenue band and what you invoice with, and we will come back with the dates that bind your business and a realistic path to meeting them.",
     ctaButton: "Talk to a consultant",
     empty: "Nothing published in this language yet.",
+    relatedHeading: "More from Insights",
   },
 
 };
