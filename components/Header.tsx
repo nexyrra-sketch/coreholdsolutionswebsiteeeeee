@@ -19,6 +19,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
     { href: localePath(locale, "/how-it-works"), label: dict.nav.howItWorks },
     { href: localePath(locale, "/pricing"), label: dict.nav.pricing },
     { href: localePath(locale, "/glossary"), label: dict.nav.glossary },
+    { href: localePath(locale, "/insights"), label: dict.nav.insights },
     { href: localePath(locale, "/about"), label: dict.nav.about },
     { href: localePath(locale, "/contact"), label: dict.nav.contact },
   ];

@@ -18,6 +18,7 @@ const en = {
     glossary: "Glossary & FAQ",
     about: "About",
     contact: "Contact",
+    insights: "Insights",
     checkDeadline: "Check your deadline",
     languageSwitch: "العربية",
     languageSwitchAria: "Switch to Arabic",
@@ -706,7 +707,7 @@ const en = {
       },
       {
         q: "What happens if a business misses its deadline?",
-        a: "Missing your e-invoicing deadline exposes a business to financial penalties under the UAE's tax administrative penalty regime — the same enforcement framework that applies to other VAT and tax compliance failures. Exact penalty amounts are set by the Federal Tax Authority rather than by CHS, so we'd rather point you to your tax advisor or the FTA directly for a specific figure than guess at one here.",
+        a: "The penalties are now published, in Cabinet Decision No. 106 of 2025. Failing to implement the system or appoint an accredited service provider by your deadline costs AED 5,000 for every month, or part of a month, that you remain non-compliant. Once you are past your go-live date, failing to transmit invoices costs a further AED 100 per invoice, capped at AED 5,000 a month, with the same again for credit notes. There are also three AED 1,000-per-day penalties covering late notification of system failures and of changes to your own data. How they apply in a specific case is the Federal Tax Authority's determination, not ours — but the figures themselves are no longer a guess.",
       },
       {
         q: "Does CHS issue my invoices for me?",
@@ -718,7 +719,7 @@ const en = {
       },
       {
         q: "Is CHS itself an accredited service provider?",
-        a: "No, and we want to be upfront about that. CHS is an integration and implementation partner: we connect your systems to an accredited service provider and manage the technical work of getting and keeping you compliant. We're not a certified ASP ourselves, and until we can name a signed accredited-provider partnership on this site, we won't imply one that doesn't exist.",
+        a: "No, and we want to be upfront about that. CHS is an independent consultancy: we establish what the law requires of your business, select and negotiate your accredited provider, architect and build the integration, and run it after go-live. We're not a certified ASP ourselves — and we hold no reseller margin with any of them, which is the entire reason our recommendation is worth anything.",
       },
       {
         q: "Will CHS's help get my business ranking higher on Google?",
@@ -802,6 +803,24 @@ const en = {
     invalidEmail: "Enter a valid email address.",
     skipToContent: "Skip to content",
   },
+
+  insights: {
+    eyebrow: "Insights",
+    h1: "Notes on getting UAE e-invoicing right.",
+    intro:
+      "Plain-language analysis of the regulation, the deadlines, and the decisions they force — written for the people who actually have to act on them.",
+    readingTime: "min read",
+    publishedLabel: "Published",
+    updatedLabel: "Updated",
+    backToIndex: "All insights",
+    sourcesHeading: "Sources",
+    ctaHeading: "Not sure which of this applies to you?",
+    ctaBody:
+      "Tell us your revenue band and what you invoice with, and we will come back with the dates that bind your business and a realistic path to meeting them.",
+    ctaButton: "Talk to a consultant",
+    empty: "Nothing published in this language yet.",
+  },
+
 };
 
 export default en;

@@ -1,8 +1,20 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n/config";
 import { BRAND } from "@/lib/brand";
+import { articleRoutes, getArticle, articleLocales } from "@/lib/insights";
 
-const routes = ["", "/calculator", "/how-it-works", "/pricing", "/about", "/glossary", "/contact", "/privacy", "/terms"];
+const routes = [
+  "",
+  "/calculator",
+  "/how-it-works",
+  "/pricing",
+  "/about",
+  "/glossary",
+  "/insights",
+  "/contact",
+  "/privacy",
+  "/terms",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = `https://${BRAND.domain}`;
@@ -20,6 +32,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     }
+  }
+
+  // Articles. Only the (slug, locale) pairs that actually exist are emitted,
+  // and each one's alternates list only the languages it was written in.
+  for (const { slug, locale } of articleRoutes()) {
+    const article = getArticle(slug)!;
+    const available = articleLocales(slug);
+    entries.push({
+      url: `${base}/${locale}/insights/${slug}`,
+      lastModified: new Date(article.updated ?? article.published),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: {
+        languages: Object.fromEntries(available.map((l) => [l, `${base}/${l}/insights/${slug}`])),
+      },
+    });
   }
 
   return entries;
