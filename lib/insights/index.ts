@@ -2,9 +2,10 @@ import type { Locale } from "@/lib/i18n/config";
 import type { Article, ArticleContent } from "./types";
 import { uaeEInvoicingPenalties } from "./articles/uae-e-invoicing-penalties";
 import { uaeChoosingAProvider } from "./articles/how-to-choose-an-accredited-service-provider";
+import { uaeSmeGuide } from "./articles/uae-e-invoicing-guide-for-smes";
 
 /** Every article, in no particular order — sorting happens in the helpers. */
-const ALL: Article[] = [uaeEInvoicingPenalties, uaeChoosingAProvider];
+const ALL: Article[] = [uaeEInvoicingPenalties, uaeChoosingAProvider, uaeSmeGuide];
 
 /** Newest first. */
 function byNewest(a: Article, b: Article) {
