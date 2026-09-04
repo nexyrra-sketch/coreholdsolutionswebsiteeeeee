@@ -14,9 +14,12 @@ const en = {
   nav: {
     home: "Home",
     howItWorks: "How It Works",
+    services: "Services",
     readiness: "Readiness Assessment",
     implementation: "Implementation",
     managed: "Managed Compliance",
+    industries: "Industries",
+    erp: "Your System",
     pricing: "Pricing",
     glossary: "Glossary & FAQ",
     about: "About",
@@ -313,6 +316,29 @@ const en = {
     ],
     closing:
       "If none of these describes you, the first conversation is free and short, and it usually ends with a clear answer either way.",
+  },
+
+  segments: {
+    industry: {
+      eyebrow: "By industry",
+      h1: "The mandate is the same. The work is not.",
+      intro:
+        "The regulation applies uniformly, but what it costs you to comply depends almost entirely on how your business invoices. These are the categories where that difference is largest, and what it means in each.",
+      readMore: "Read the detail",
+      alsoHeading: "Other industries",
+      note:
+        "These describe the patterns we see in each category. Your own environment is established during assessment, not assumed from your sector.",
+    },
+    erp: {
+      eyebrow: "By system",
+      h1: "You probably do not need to replace your accounting system.",
+      intro:
+        "The most expensive mistake in this whole exercise is a platform migration nobody required. In most cases the system you already run can meet the requirement. Here is what the mandate actually means for each of the common ones.",
+      readMore: "Read the detail",
+      alsoHeading: "Other systems",
+      note:
+        "We do not resell any accounting platform and we do not sell pre-built integrations. Where a provider advertises support for your system, we test whether it fits your configuration rather than accepting the claim.",
+    },
   },
 
   services: {

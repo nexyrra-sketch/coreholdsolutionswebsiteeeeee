@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n/config";
 import { BRAND } from "@/lib/brand";
 import { articleRoutes, getArticle, articleLocales } from "@/lib/insights";
+import { segmentRoutes, segmentLocales, basePath } from "@/lib/segments";
 
 const routes = [
   "",
@@ -10,6 +11,8 @@ const routes = [
   "/readiness-assessment",
   "/implementation",
   "/managed-compliance",
+  "/industries",
+  "/erp",
   "/pricing",
   "/about",
   "/glossary",
@@ -49,6 +52,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       alternates: {
         languages: Object.fromEntries(available.map((l) => [l, `${base}/${l}/insights/${slug}`])),
+      },
+    });
+  }
+
+  // Industry and ERP landing pages, same locale-partial discipline as articles.
+  for (const { kind, slug, locale } of segmentRoutes()) {
+    const available = segmentLocales(kind, slug);
+    entries.push({
+      url: `${base}/${locale}${basePath[kind]}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+      alternates: {
+        languages: Object.fromEntries(available.map((l) => [l, `${base}/${l}${basePath[kind]}/${slug}`])),
       },
     });
   }

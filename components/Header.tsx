@@ -13,13 +13,20 @@ import Logo from "./Logo";
 export default function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname() ?? `/${locale}`;
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
-  const navItems = [
-    { href: localePath(locale, "/"), label: dict.nav.home },
-    { href: localePath(locale, "/how-it-works"), label: dict.nav.howItWorks },
+  // Services are grouped rather than listed flat: twelve top-level links
+  // overflow the bar and make nothing look important.
+  const serviceItems = [
     { href: localePath(locale, "/readiness-assessment"), label: dict.nav.readiness },
     { href: localePath(locale, "/implementation"), label: dict.nav.implementation },
     { href: localePath(locale, "/managed-compliance"), label: dict.nav.managed },
+    { href: localePath(locale, "/industries"), label: dict.nav.industries },
+    { href: localePath(locale, "/erp"), label: dict.nav.erp },
+  ];
+
+  const navItems = [
+    { href: localePath(locale, "/how-it-works"), label: dict.nav.howItWorks },
     { href: localePath(locale, "/pricing"), label: dict.nav.pricing },
     { href: localePath(locale, "/glossary"), label: dict.nav.glossary },
     { href: localePath(locale, "/insights"), label: dict.nav.insights },
@@ -38,6 +45,39 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              type="button"
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              onClick={() => setServicesOpen((v) => !v)}
+              className="flex items-center gap-1.5 text-small font-medium text-ink-800 transition-colors hover:text-ink-950"
+            >
+              {dict.nav.services}
+              <span aria-hidden="true" className={`text-[0.6rem] transition-transform ${servicesOpen ? "rotate-180" : ""}`}>
+                &#9660;
+              </span>
+            </button>
+            {servicesOpen && (
+              <ul className="absolute start-0 top-full z-50 min-w-[15rem] rounded-md border border-line bg-paper-50 py-2 shadow-lg">
+                {serviceItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-5 py-2.5 text-small text-ink-800 transition-colors hover:bg-paper-100 hover:text-ink-950"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -85,6 +125,21 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
       {open && (
         <nav id="mobile-nav" aria-label="Primary" className="lg:hidden border-t border-line bg-paper-50">
           <ul className="container-content flex flex-col py-4">
+            <li className="pb-1 pt-2 text-micro font-semibold uppercase tracking-widest text-ink-500">
+              {dict.nav.services}
+            </li>
+            {serviceItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-2.5 ps-3 text-lg font-display text-ink-900"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li aria-hidden="true" className="my-3 border-t border-line" />
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
