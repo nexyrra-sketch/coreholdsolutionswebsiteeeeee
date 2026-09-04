@@ -116,69 +116,6 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </div>
       </section>
 
-      {/* ================= THE REGULATION, IN FIGURES ================= */}
-      <section className="relative overflow-hidden bg-ink-950 pb-24 text-paper-50">
-        <div className="container-content">
-          <div className="rule-fade-light mb-16" />
-          <Reveal variant="up">
-            <Eyebrow tone="light">{dict.numbers.eyebrow}</Eyebrow>
-            <h2 className="max-w-3xl font-display text-h3 text-paper-50/90">{dict.numbers.h2}</h2>
-          </Reveal>
-
-          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {dict.numbers.items.map((item, i) => (
-              <Reveal key={item.label} variant="up" delay={i * 90}>
-                <div className="border-t border-paper-50/15 pt-6">
-                  <p className="font-display text-5xl text-brass-400">
-                    {item.animate ? (
-                      <CountUp to={item.value} prefix={item.prefix} suffix={item.suffix} />
-                    ) : (
-                      <>
-                        {item.prefix}
-                        {item.value}
-                        {item.suffix}
-                      </>
-                    )}
-                  </p>
-                  <p className="mt-4 font-display text-lg text-paper-50">{item.label}</p>
-                  <p className="mt-2 text-small leading-relaxed text-paper-50/60">{item.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal variant="fade" delay={200}>
-            <p className="mt-12 max-w-3xl text-small text-paper-50/35">{dict.numbers.note}</p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ================= WHAT E-INVOICING ACTUALLY IS ================= */}
-      <section id="what-is-e-invoicing" className="vault-vignette relative overflow-hidden bg-ink-950 pb-section-y text-paper-50">
-        <div className="container-content relative">
-          <div className="rule-fade-light mb-16" />
-          <Reveal variant="up">
-            <div className="max-w-3xl">
-              <Eyebrow tone="light">{dict.explainer.eyebrow}</Eyebrow>
-              <h2 className="font-display text-h2 text-paper-50">{dict.explainer.h2}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-paper-50/75">{dict.explainer.intro}</p>
-            </div>
-          </Reveal>
-
-          <div className="mt-16">
-            <FiveCorner dict={dict} />
-          </div>
-
-          <Reveal variant="fade" delay={140}>
-            <div className="mt-12">
-              <LinkButton href={localePath(locale, "/glossary")} variant="secondary">
-                {dict.explainer.cta}
-              </LinkButton>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* ================= THE PROBLEM ================= */}
       <section className="bg-paper-50 py-section-y">
         <div className="container-content">
@@ -206,6 +143,63 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             <p className="mt-16 max-w-2xl border-s-2 border-brass-500 ps-6 font-display text-h3 leading-tight">
               {dict.problem.closing}
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= PINNED ENGAGEMENT PATH ================= */}
+      {/* No `overflow-hidden` on this section: an overflow-clipping ancestor
+          silently breaks `position: sticky` on the pinned path inside it. */}
+      <section id="engagement" className="vault-vignette relative bg-ink-950 py-section-y text-paper-50">
+        <div className="container-content">
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow tone="light">{dict.path.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2 text-paper-50">{dict.path.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-paper-50/70">{dict.path.intro}</p>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mt-16 lg:mt-0">
+          <PinnedPath dict={dict} />
+        </div>
+      </section>
+
+      {/* ================= WHAT COMES OFF YOUR DESK ================= */}
+      <section id="offload" className="bg-paper-100 py-section-y">
+        <div className="container-content">
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow>{dict.offload.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2">{dict.offload.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-ink-700">{dict.offload.intro}</p>
+            </div>
+          </Reveal>
+
+          <dl className="mt-14 overflow-hidden rounded-md border border-line bg-white">
+            {dict.offload.rows.map((row, i) => (
+              <Reveal key={row.q} variant="up" delay={Math.min(i, 4) * 60}>
+                <div className="grid gap-3 border-b border-line p-6 last:border-b-0 sm:grid-cols-2 sm:gap-8 sm:p-8">
+                  <dt className="font-display text-lg leading-snug text-ink-950">{row.q}</dt>
+                  <dd className="flex gap-3 leading-relaxed text-ink-700">
+                    <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brass-500" />
+                    {row.a}
+                  </dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
+
+          <Reveal variant="fade" delay={120}>
+            <p className="mt-10 max-w-3xl border-s-2 border-brass-400 ps-6 leading-relaxed text-ink-600">
+              {dict.offload.closing}
+            </p>
+          </Reveal>
+
+          <Reveal variant="up" delay={160}>
+            <div className="mt-10">
+              <LinkButton href={localePath(locale, "/readiness-assessment")}>{dict.offload.cta}</LinkButton>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -294,8 +288,40 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </div>
       </section>
 
+      {/* ================= INDEPENDENCE ================= */}
+      <section className="bg-paper-50 py-section-y">
+        <div className="container-content">
+          <div className="grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
+            <Reveal variant="up">
+              <div>
+                <Eyebrow>{dict.independence.eyebrow}</Eyebrow>
+                <h2 className="font-display text-h2">{dict.independence.h2}</h2>
+                <p className="mt-6 text-lg leading-relaxed text-ink-700">{dict.independence.body}</p>
+              </div>
+            </Reveal>
+
+            <Reveal variant="up" delay={140}>
+              <div className="rounded-md border border-line bg-paper-100 p-8 sm:p-10">
+                <h3 className="text-micro font-semibold uppercase tracking-widest text-brass-600">
+                  {dict.independence.factsHeading}
+                </h3>
+                <ul className="mt-6 space-y-3">
+                  {dict.independence.facts.map((fact) => (
+                    <li key={fact} className="flex gap-3 border-b border-line/70 pb-3 text-ink-800 last:border-0">
+                      <span aria-hidden="true" className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-brass-500" />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-small leading-relaxed text-ink-600">{dict.independence.factsNote}</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ================= THE TWO DECISIONS ================= */}
-      <section id="guidance" className="bg-paper-50 py-section-y">
+      <section id="guidance" className="bg-paper-100 py-section-y">
         <div className="container-content">
           <Reveal variant="up">
             <div className="max-w-3xl">
@@ -363,58 +389,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </div>
       </section>
 
-      {/* ================= PINNED ENGAGEMENT PATH ================= */}
-      {/* No `overflow-hidden` on this section: an overflow-clipping ancestor
-          silently breaks `position: sticky` on the pinned path inside it. */}
-      <section id="engagement" className="vault-vignette relative bg-ink-950 py-section-y text-paper-50">
-        <div className="container-content">
-          <Reveal variant="up">
-            <div className="max-w-3xl">
-              <Eyebrow tone="light">{dict.path.eyebrow}</Eyebrow>
-              <h2 className="font-display text-h2 text-paper-50">{dict.path.h2}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-paper-50/70">{dict.path.intro}</p>
-            </div>
-          </Reveal>
-        </div>
-        <div className="mt-16 lg:mt-0">
-          <PinnedPath dict={dict} />
-        </div>
-      </section>
-
-      {/* ================= INDEPENDENCE ================= */}
-      <section className="bg-paper-50 py-section-y">
-        <div className="container-content">
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-20">
-            <Reveal variant="up">
-              <div>
-                <Eyebrow>{dict.independence.eyebrow}</Eyebrow>
-                <h2 className="font-display text-h2">{dict.independence.h2}</h2>
-                <p className="mt-6 text-lg leading-relaxed text-ink-700">{dict.independence.body}</p>
-              </div>
-            </Reveal>
-
-            <Reveal variant="up" delay={140}>
-              <div className="rounded-md border border-line bg-paper-100 p-8 sm:p-10">
-                <h3 className="text-micro font-semibold uppercase tracking-widest text-brass-600">
-                  {dict.independence.factsHeading}
-                </h3>
-                <ul className="mt-6 space-y-3">
-                  {dict.independence.facts.map((fact) => (
-                    <li key={fact} className="flex gap-3 border-b border-line/70 pb-3 text-ink-800 last:border-0">
-                      <span aria-hidden="true" className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-brass-500" />
-                      {fact}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 text-small leading-relaxed text-ink-600">{dict.independence.factsNote}</p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* ================= CALCULATOR ================= */}
-      <section id="calculator" className="bg-paper-100 py-section-y">
+      <section id="calculator" className="bg-paper-50 py-section-y">
         <div className="container-content">
           <Reveal variant="up">
             <div className="mb-10 max-w-2xl">
@@ -430,7 +406,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       </section>
 
       {/* ================= AUDIENCES ================= */}
-      <section className="bg-paper-50 py-section-y">
+      <section className="bg-paper-100 py-section-y">
         <div className="container-content">
           <Reveal variant="up">
             <Eyebrow>{dict.audiences.eyebrow}</Eyebrow>
@@ -445,6 +421,103 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= THE REGULATION, IN FIGURES ================= */}
+      <section className="relative overflow-hidden bg-ink-950 pb-24 pt-section-y text-paper-50">
+        <div className="container-content">
+          <div className="rule-fade-light mb-16" />
+          <Reveal variant="up">
+            <Eyebrow tone="light">{dict.numbers.eyebrow}</Eyebrow>
+            <h2 className="max-w-3xl font-display text-h3 text-paper-50/90">{dict.numbers.h2}</h2>
+          </Reveal>
+
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {dict.numbers.items.map((item, i) => (
+              <Reveal key={item.label} variant="up" delay={i * 90}>
+                <div className="border-t border-paper-50/15 pt-6">
+                  <p className="font-display text-5xl text-brass-400">
+                    {item.animate ? (
+                      <CountUp to={item.value} prefix={item.prefix} suffix={item.suffix} />
+                    ) : (
+                      <>
+                        {item.prefix}
+                        {item.value}
+                        {item.suffix}
+                      </>
+                    )}
+                  </p>
+                  <p className="mt-4 font-display text-lg text-paper-50">{item.label}</p>
+                  <p className="mt-2 text-small leading-relaxed text-paper-50/60">{item.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal variant="fade" delay={200}>
+            <p className="mt-12 max-w-3xl text-small text-paper-50/35">{dict.numbers.note}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= WHAT E-INVOICING ACTUALLY IS ================= */}
+      <section id="what-is-e-invoicing" className="vault-vignette relative overflow-hidden bg-ink-950 pb-section-y text-paper-50">
+        <div className="container-content relative">
+          <div className="rule-fade-light mb-16" />
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow tone="light">{dict.explainer.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2 text-paper-50">{dict.explainer.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-paper-50/75">{dict.explainer.intro}</p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16">
+            <FiveCorner dict={dict} />
+          </div>
+
+          <Reveal variant="fade" delay={140}>
+            <div className="mt-12">
+              <LinkButton href={localePath(locale, "/glossary")} variant="secondary">
+                {dict.explainer.cta}
+              </LinkButton>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= PRICING TEASER ================= */}
+      <section className="bg-paper-50 py-section-y">
+        <div className="container-content">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <Reveal variant="up">
+              <div>
+                <Eyebrow>{dict.pricing.eyebrow}</Eyebrow>
+                <h2 className="font-display text-h2">{dict.pricing.h1}</h2>
+                <p className="mt-4 max-w-lg text-lg text-ink-700">{dict.pricing.intro}</p>
+                <div className="mt-8">
+                  <LinkButton href={localePath(locale, "/pricing")}>{dict.nav.pricing}</LinkButton>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal variant="scale" delay={120}>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="card-lift rounded-md border border-line bg-white p-6 hover:border-brass-400">
+                  <p className="mb-2 text-micro font-semibold uppercase tracking-widest text-brass-600">
+                    {dict.pricing.getCompliant.title}
+                  </p>
+                  <p className="text-small text-ink-700">{dict.pricing.getCompliant.subtitle}</p>
+                </div>
+                <div className="card-lift rounded-md border border-line bg-white p-6 hover:border-brass-400">
+                  <p className="mb-2 text-micro font-semibold uppercase tracking-widest text-brass-600">
+                    {dict.pricing.stayCompliant.title}
+                  </p>
+                  <p className="text-small text-ink-700">{dict.pricing.stayCompliant.subtitle}</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -479,40 +552,6 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= PRICING TEASER ================= */}
-      <section className="bg-paper-50 py-section-y">
-        <div className="container-content">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <Reveal variant="up">
-              <div>
-                <Eyebrow>{dict.pricing.eyebrow}</Eyebrow>
-                <h2 className="font-display text-h2">{dict.pricing.h1}</h2>
-                <p className="mt-4 max-w-lg text-lg text-ink-700">{dict.pricing.intro}</p>
-                <div className="mt-8">
-                  <LinkButton href={localePath(locale, "/pricing")}>{dict.nav.pricing}</LinkButton>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal variant="scale" delay={120}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="card-lift rounded-md border border-line bg-white p-6 hover:border-brass-400">
-                  <p className="mb-2 text-micro font-semibold uppercase tracking-widest text-brass-600">
-                    {dict.pricing.getCompliant.title}
-                  </p>
-                  <p className="text-small text-ink-700">{dict.pricing.getCompliant.subtitle}</p>
-                </div>
-                <div className="card-lift rounded-md border border-line bg-white p-6 hover:border-brass-400">
-                  <p className="mb-2 text-micro font-semibold uppercase tracking-widest text-brass-600">
-                    {dict.pricing.stayCompliant.title}
-                  </p>
-                  <p className="text-small text-ink-700">{dict.pricing.stayCompliant.subtitle}</p>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>

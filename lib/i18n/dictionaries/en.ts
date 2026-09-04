@@ -51,7 +51,7 @@ const en = {
     eyebrow: "Federal Decree-Law No. 16 of 2024 · UAE Mandatory E-Invoicing",
     h1: "Every business in the UAE has an e-invoicing deadline. Very few have a plan.",
     subhead:
-      "Federal law now puts every VAT-registered business in the country on a fixed timeline to issue and receive invoices through an accredited provider. Every provider you speak to will recommend its own platform. We sit on your side of that decision — establishing what the law requires of you specifically, choosing the right accredited provider for the systems you already run, building and proving the connection, and staying accountable for it after go-live. For most finance teams, day-to-day invoicing barely changes.",
+      "CoreholdSolutions assesses, selects, implements and operates e-invoicing for UAE businesses. Federal law now puts every VAT-registered business on a fixed timeline to invoice through an accredited provider, and every provider you speak to will recommend its own platform. We work on your side of that decision: establishing what the law requires of you specifically, choosing the right provider for the systems you already run, building and proving the connection, and staying accountable for it after go-live.",
     ctaPrimary: "Find your deadline",
     ctaSecondary: "How we work",
     trustLine: "Client-side, not vendor-side · Advisory, provider selection, integration and managed operations under one accountable team",
@@ -341,6 +341,25 @@ const en = {
     },
   },
 
+  offload: {
+    eyebrow: "What comes off your desk",
+    h2: "You do not have to work this out on your own.",
+    intro:
+      "Below is the list of questions this project puts in front of a finance team, and who answers each one once we are engaged. Nothing here is a promise about the parts we do not control.",
+    rows: [
+      { q: "Which accredited provider should we appoint?", a: "We define your requirements first, then score the accredited options against them and sit on your side of the commercial conversation." },
+      { q: "Do we have to change our accounting or ERP system?", a: "We assess your current environment and tell you honestly. In most cases the answer is no, and we would rather say so than sell a migration." },
+      { q: "How does our invoice data map to the required format?", a: "We do the mapping, including the fields your system does not currently capture, and validate it before it reaches production." },
+      { q: "Who runs the testing?", a: "We do, against real invoice cases including the ones built to fail, and we coordinate the provider's side of it." },
+      { q: "Who owns the project across finance, IT and the provider?", a: "One named project owner at CHS, with a plan, a task list and an issue log you can see." },
+      { q: "What happens when an invoice is rejected after go-live?", a: "We find it, diagnose it and resolve it, and raise it with your provider where the fix sits on their side." },
+      { q: "Who keeps track when the rules change?", a: "We do, and we tell you what it means for your setup specifically rather than forwarding you a circular." },
+    ],
+    closing:
+      "What stays with you: your systems, your data, your commercial relationship with the provider, and the decisions only you can make. We do not sign your contracts or file your returns.",
+    cta: "Check your readiness",
+  },
+
   services: {
     boundary: {
       eyebrow: "Where the line sits",
@@ -623,9 +642,9 @@ const en = {
 
   path: {
     eyebrow: "The engagement",
-    h2: "How a CHS engagement actually runs.",
+    h2: "Assess. Select. Implement. Operate.",
     intro:
-      "Four stages, in order, each ending in something concrete handed over. You always know which stage you are in and what you are waiting for.",
+      "Four stages, in order, each ending in something concrete handed over. It is the same method whether you are starting from nothing or joining us halfway through a stalled project, and you always know which stage you are in and what you are waiting for.",
     stages: [
       {
         n: "01",
@@ -643,7 +662,7 @@ const en = {
       },
       {
         n: "03",
-        label: "Build",
+        label: "Implement",
         title: "We architect and prove the connection.",
         body: "Your invoice data mapped into the required structured format, validated against real cases including the ones designed to fail, then cut over in stages. Your team is trained on the small number of things that genuinely change for them.",
         outcome: "You receive: a tested, live connection and a documented cutover.",
@@ -946,7 +965,7 @@ const en = {
       },
       {
         q: "What accounting or ERP systems can CHS connect?",
-        a: "We've built integrations for the systems most UAE businesses already use — QuickBooks, Zoho, and Xero on the smaller end, SAP and Oracle for larger enterprises, and custom setups including spreadsheet-based invoicing for businesses that haven't moved to dedicated software yet. If you're not sure whether your setup can be connected, that's exactly what the first conversation is for.",
+        a: "We work across the systems most UAE businesses already use — QuickBooks, Zoho and Xero on the smaller end, SAP and Oracle for larger enterprises, and custom or spreadsheet-based setups for businesses that have not moved to dedicated software yet. To be precise about what that means: we do not sell a pre-built plugin for any of them. We assess your specific configuration, select and coordinate an accredited provider, and build and prove the connection. If you are not sure whether your setup can be connected, that is exactly what the first conversation is for.",
       },
       {
         q: "Is CHS itself an accredited service provider?",
