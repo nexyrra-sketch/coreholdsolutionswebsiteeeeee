@@ -23,6 +23,7 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
     { href: localePath(locale, "/managed-compliance"), label: dict.nav.managed },
     { href: localePath(locale, "/industries"), label: dict.nav.industries },
     { href: localePath(locale, "/erp"), label: dict.nav.erp },
+    { href: localePath(locale, "/partners"), label: dict.nav.partners },
   ];
 
   const navItems = [

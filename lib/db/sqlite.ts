@@ -27,6 +27,15 @@ db.exec(`
     invoicing_method TEXT,
     tier TEXT,
     message TEXT,
+    industry TEXT,
+    system TEXT,
+    entities TEXT,
+    stage TEXT,
+    asp_status TEXT,
+    landing_page TEXT,
+    referrer TEXT,
+    utm_source TEXT,
+    utm_campaign TEXT,
     appoint_by TEXT,
     live_by TEXT,
     notified_team INTEGER NOT NULL DEFAULT 0,
@@ -34,6 +43,18 @@ db.exec(`
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
   );
 `);
+
+// Additive migration: existing databases predate the qualification and
+// attribution columns, so add any that are missing rather than requiring a
+// wipe. Safe to run on every boot.
+{
+  const existing = new Set<string>(
+    (db.prepare("PRAGMA table_info(leads)").all() as { name: string }[]).map((c) => c.name)
+  );
+  for (const col of ["industry", "system", "entities", "stage", "asp_status", "landing_page", "referrer", "utm_source", "utm_campaign"]) {
+    if (!existing.has(col)) db.exec(`ALTER TABLE leads ADD COLUMN ${col} TEXT`);
+  }
+}
 
 function rowToLead(row: any): Lead {
   return {
@@ -48,6 +69,15 @@ function rowToLead(row: any): Lead {
     invoicingMethod: row.invoicing_method,
     tier: row.tier,
     message: row.message,
+    industry: row.industry,
+    system: row.system,
+    entities: row.entities,
+    stage: row.stage,
+    aspStatus: row.asp_status,
+    landingPage: row.landing_page,
+    referrer: row.referrer,
+    utmSource: row.utm_source,
+    utmCampaign: row.utm_campaign,
     appointBy: row.appoint_by,
     liveBy: row.live_by,
     notifiedTeam: !!row.notified_team,
@@ -60,8 +90,8 @@ export function insertLeadSqlite(
   lead: LeadInput & { appointBy?: string | null; liveBy?: string | null }
 ): Lead {
   const stmt = db.prepare(`
-    INSERT INTO leads (source, locale, business_name, contact_name, email, phone, revenue_band, invoicing_method, tier, message, appoint_by, live_by)
-    VALUES (@source, @locale, @businessName, @contactName, @email, @phone, @revenueBand, @invoicingMethod, @tier, @message, @appointBy, @liveBy)
+    INSERT INTO leads (source, locale, business_name, contact_name, email, phone, revenue_band, invoicing_method, tier, message, industry, system, entities, stage, asp_status, landing_page, referrer, utm_source, utm_campaign, appoint_by, live_by)
+    VALUES (@source, @locale, @businessName, @contactName, @email, @phone, @revenueBand, @invoicingMethod, @tier, @message, @industry, @system, @entities, @stage, @aspStatus, @landingPage, @referrer, @utmSource, @utmCampaign, @appointBy, @liveBy)
   `);
   const info = stmt.run({
     source: lead.source,
@@ -74,6 +104,15 @@ export function insertLeadSqlite(
     invoicingMethod: lead.invoicingMethod ?? null,
     tier: lead.tier ?? null,
     message: lead.message ?? null,
+    industry: lead.industry ?? null,
+    system: lead.system ?? null,
+    entities: lead.entities ?? null,
+    stage: lead.stage ?? null,
+    aspStatus: lead.aspStatus ?? null,
+    landingPage: lead.landingPage ?? null,
+    referrer: lead.referrer ?? null,
+    utmSource: lead.utmSource ?? null,
+    utmCampaign: lead.utmCampaign ?? null,
     appointBy: lead.appointBy ?? null,
     liveBy: lead.liveBy ?? null,
   });

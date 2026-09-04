@@ -13,6 +13,7 @@ const routes = [
   "/managed-compliance",
   "/industries",
   "/erp",
+  "/partners",
   "/pricing",
   "/about",
   "/glossary",

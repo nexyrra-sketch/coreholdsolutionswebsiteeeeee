@@ -40,7 +40,7 @@ async function send(to: string, subject: string, html: string): Promise<EmailRes
 
 export async function sendTeamNotification(lead: Lead): Promise<EmailResult> {
   const teamEmail = process.env.LEADS_NOTIFY_EMAIL || BRAND.email;
-  const subject = `New lead: ${lead.businessName} (${lead.tier ?? "unscoped"})`;
+  const subject = `New lead: ${lead.businessName}${lead.industry ? ` — ${lead.industry}` : ""}${lead.stage ? ` — ${lead.stage}` : ""} (${lead.tier ?? "unscoped"})`;
   const html = `
     <h2>New lead from ${lead.source === "calculator" ? "the readiness calculator" : "the contact form"}</h2>
     <p><strong>Business:</strong> ${lead.businessName}</p>
@@ -51,6 +51,18 @@ export async function sendTeamNotification(lead: Lead): Promise<EmailResult> {
     <p><strong>Appoint by:</strong> ${lead.appointBy ?? "—"}</p>
     <p><strong>Live by:</strong> ${lead.liveBy ?? "—"}</p>
     ${lead.message ? `<p><strong>Message:</strong> ${lead.message}</p>` : ""}
+
+    <h3>Qualification</h3>
+    <p><strong>Industry:</strong> ${lead.industry ?? "—"}</p>
+    <p><strong>System:</strong> ${lead.system ?? "—"}</p>
+    <p><strong>Entities:</strong> ${lead.entities ?? "—"}</p>
+    <p><strong>Stage:</strong> ${lead.stage ?? "—"}</p>
+    <p><strong>Provider appointed:</strong> ${lead.aspStatus ?? "—"}</p>
+
+    <h3>Attribution</h3>
+    <p><strong>Landing page:</strong> ${lead.landingPage ?? "—"}</p>
+    <p><strong>Referrer:</strong> ${lead.referrer || "—"}</p>
+    <p><strong>Campaign:</strong> ${lead.utmSource ?? "—"} / ${lead.utmCampaign ?? "—"}</p>
     <p><strong>Locale:</strong> ${lead.locale}</p>
   `;
   return send(teamEmail, subject, html);

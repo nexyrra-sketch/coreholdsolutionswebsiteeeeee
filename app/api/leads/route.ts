@@ -11,8 +11,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "Invalid JSON body." }, { status: 400 });
   }
 
-  const { source, locale, businessName, contactName, email, phone, revenueBand, invoicingMethod, tier, message } =
-    body ?? {};
+  const {
+    source, locale, businessName, contactName, email, phone,
+    revenueBand, invoicingMethod, tier, message,
+    industry, system, entities, stage, aspStatus,
+    landingPage, referrer, utmSource, utmCampaign,
+  } = body ?? {};
 
   if (!businessName || !contactName || !email) {
     return NextResponse.json(
@@ -36,6 +40,15 @@ export async function POST(req: NextRequest) {
       invoicingMethod: invoicingMethod || null,
       tier: tier || null,
       message: message || null,
+      industry: industry || null,
+      system: system || null,
+      entities: entities || null,
+      stage: stage || null,
+      aspStatus: aspStatus || null,
+      landingPage: landingPage || null,
+      referrer: referrer || null,
+      utmSource: utmSource || null,
+      utmCampaign: utmCampaign || null,
     });
 
     const [teamResult, customerResult] = await Promise.all([
