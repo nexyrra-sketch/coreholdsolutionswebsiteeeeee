@@ -15,7 +15,7 @@ export const uaeProviderDirectory: Article = {
         { type: "h2", text: "Fully accredited providers" },
         {
           type: "p",
-          text: "These 49 providers have completed the Ministry of Finance's full accreditation process — the paid-up capital, professional liability insurance, ISO certifications, prior e-invoicing track record, and the 90-day assessment covered in our glossary.",
+          text: "These 49 providers have completed the Ministry of Finance's full accreditation process — the paid-up capital, professional liability insurance, ISO certifications, documented e-invoicing operating experience, and the 90-working-day assessment covered in our glossary.",
         },
         {
           type: "table",

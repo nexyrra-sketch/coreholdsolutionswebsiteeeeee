@@ -17,6 +17,9 @@ export default function Header({ locale, dict }: { locale: Locale; dict: Diction
   const navItems = [
     { href: localePath(locale, "/"), label: dict.nav.home },
     { href: localePath(locale, "/how-it-works"), label: dict.nav.howItWorks },
+    { href: localePath(locale, "/readiness-assessment"), label: dict.nav.readiness },
+    { href: localePath(locale, "/implementation"), label: dict.nav.implementation },
+    { href: localePath(locale, "/managed-compliance"), label: dict.nav.managed },
     { href: localePath(locale, "/pricing"), label: dict.nav.pricing },
     { href: localePath(locale, "/glossary"), label: dict.nav.glossary },
     { href: localePath(locale, "/insights"), label: dict.nav.insights },

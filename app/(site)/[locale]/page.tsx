@@ -8,6 +8,7 @@ import { localePath } from "@/lib/i18n/path";
 import { Eyebrow } from "@/components/Section";
 import { LinkButton } from "@/components/Button";
 import ConcentricMotif from "@/components/ConcentricMotif";
+import BoundaryDiagram from "@/components/BoundaryDiagram";
 import Countdown from "@/components/Countdown";
 import Calculator from "@/components/Calculator";
 import PinnedPath from "@/components/PinnedPath";
@@ -25,6 +26,15 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
     alternates: pageAlternates(params.locale, ""),
   };
 }
+
+// Each customer situation routes to the page that actually answers it, rather
+// than dumping every path into a generic contact form.
+const SCENARIO_ROUTES = [
+  "/readiness-assessment",
+  "/implementation",
+  "/implementation",
+  "/managed-compliance",
+] as const;
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const locale = params.locale;
@@ -221,7 +231,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                   <p className="mt-4 text-small leading-relaxed text-ink-600">{item.body}</p>
                   <div className="mt-auto pt-6">
                     <Link
-                      href={localePath(locale, "/contact")}
+                      href={localePath(locale, SCENARIO_ROUTES[i])}
                       className="text-small font-semibold text-ink-950 underline decoration-brass-400 underline-offset-4 hover:text-brass-700"
                     >
                       {item.next} &rarr;
@@ -237,6 +247,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           </Reveal>
         </div>
       </section>
+
+      <BoundaryDiagram locale={locale} />
 
       {/* ================= FOUR PILLARS ================= */}
       <section id="what-we-do" className="bg-paper-100 py-section-y">

@@ -14,6 +14,9 @@ const en = {
   nav: {
     home: "Home",
     howItWorks: "How It Works",
+    readiness: "Readiness Assessment",
+    implementation: "Implementation",
+    managed: "Managed Compliance",
     pricing: "Pricing",
     glossary: "Glossary & FAQ",
     about: "About",
@@ -310,6 +313,167 @@ const en = {
     ],
     closing:
       "If none of these describes you, the first conversation is free and short, and it usually ends with a clear answer either way.",
+  },
+
+  services: {
+    boundary: {
+      eyebrow: "Where the line sits",
+      h2: "What we do. What your accredited provider does.",
+      intro:
+        "This is the question every prospect eventually asks, usually three conversations in: if I already have an accredited provider, what is left for you to do? The honest answer is that appointing a provider settles one decision out of a project with many. Here is the split.",
+      layers: [
+        {
+          label: "Your business",
+          title: "What stays yours",
+          items: [
+            "Your ERP or accounting system",
+            "Your finance team and their workflow",
+            "Your invoice data and customer records",
+            "The commercial relationship with your provider",
+          ],
+        },
+        {
+          label: "CoreholdSolutions",
+          title: "What we take on",
+          items: [
+            "Establishing what the regulation requires of your business specifically",
+            "Defining requirements before any provider conversation",
+            "Scoring and selecting the accredited provider that fits your systems",
+            "Mapping your invoice data into the required structured format",
+            "Coordinating the integration with your provider and your IT side",
+            "Testing, including the cases designed to fail",
+            "Go-live planning and staged cutover",
+            "Monitoring, rejection resolution and reconciliation after go-live",
+          ],
+        },
+        {
+          label: "Your accredited provider",
+          title: "What only they can do",
+          items: [
+            "Transmitting your invoices across the network",
+            "Receiving invoices addressed to you",
+            "The reporting leg to the Federal Tax Authority",
+            "Everything the accreditation itself authorises",
+          ],
+        },
+      ],
+      note:
+        "We are not an accredited service provider and do not perform any of the functions in the third column. That separation is deliberate: it is what allows us to advise on which provider you should appoint without a commercial answer waiting at the end of it.",
+      answer: {
+        q: "So why do I need you if I already have a provider?",
+        a: "Because choosing a provider is a procurement decision, and what follows it is an integration project. Your invoice data still has to map correctly, validate against real cases, survive testing, and cut over without breaking month-end — and somebody has to own that across finance, IT and the provider. That is the work.",
+      },
+    },
+
+    readiness: {
+      eyebrow: "Readiness assessment",
+      h1: "Know what your business actually needs before you sit in a single vendor demo.",
+      lede:
+        "A defined piece of professional work, not a discovery call in disguise. We establish your position formally — what the regulation requires of you, what your current systems imply, what it will genuinely cost, and what the sequence of work is. You end up able to run a provider conversation on your terms instead of theirs.",
+      forWhomTitle: "Who this is for",
+      forWhom: [
+        "Businesses that have not started, and want a plan before a purchase",
+        "Finance teams being asked by their board what the exposure is",
+        "Anyone who has sat through provider demos and come away less certain than before",
+        "Groups with multiple entities or VAT registrations, where the scoping is not obvious",
+      ],
+      reviewTitle: "What we review",
+      review: [
+        "Revenue tier, entity structure and VAT groupings, against the published schedule",
+        "Your current accounting or ERP environment and how invoice data is actually held in it",
+        "Invoice volume, document types and the transactions that turn out to be edge cases",
+        "Existing integrations, and what will and will not survive the change",
+        "Where your invoice data is incomplete or inconsistent today, because that surfaces during testing either way",
+      ],
+      answersTitle: "The questions you get answered",
+      answers: [
+        "Which deadline applies to us, and to which entities",
+        "What is our realistic exposure if we are late",
+        "Do we need to change our accounting or ERP system, or not",
+        "What kind of provider do we actually need, and which ones fit",
+        "How long will implementation take, and what will it cost",
+        "Who inside our business needs to own this, and how much of their time it takes",
+      ],
+      deliverTitle: "What you receive",
+      deliver: [
+        "A written compliance position you can hand to your board, auditor or group finance function",
+        "A dated roadmap with named owners, not a list of recommendations",
+        "A scored provider shortlist matched to your systems and volume",
+        "An implementation estimate with the assumptions shown",
+      ],
+      metaDuration: "Typically 2 to 3 weeks",
+      metaPrice: "From AED 6,500",
+      metaPriceNote: "Scoped to your entity structure",
+      metaFormat: "Two working sessions, one written deliverable",
+      afterTitle: "What happens after",
+      afterBody:
+        "You own the deliverable either way. If you want us to run the implementation, the assessment fee is credited against it. If you want to take the plan to someone else, or run it internally, that is a legitimate outcome and we would rather you do that than buy work you do not need.",
+      keepTitle: "And if your current setup is already fine",
+      keepBody:
+        "Then that is what the report says. The most expensive mistake we see is a platform migration nobody was required to make, sold on the back of a regulation that did not ask for it. If your existing environment can meet the requirement, keeping it is the cheapest correct answer.",
+      cta: "Book a readiness assessment",
+      ctaSecondary: "See how an engagement runs",
+    },
+
+    implementation: {
+      eyebrow: "Implementation",
+      h1: "Choosing a provider is a decision. Getting it working is a project.",
+      lede:
+        "Most of what goes wrong in e-invoicing happens after the provider is appointed, in the gap between a signed contract and a system that actually transmits clean invoices at month-end. We run that middle, whether you appointed your provider through us or before you had ever heard of us.",
+      stagesTitle: "How the work runs",
+      stages: [
+        { n: "01", t: "Discovery and current-state review", b: "Your systems, your invoice data, your document types, and the people who will have to live with the result." },
+        { n: "02", t: "Requirements definition", b: "What the connection has to do, written down before anyone builds anything, so the provider is held to a specification rather than a conversation." },
+        { n: "03", t: "Architecture and data mapping", b: "Your invoice fields mapped into the required structured format, including the fields your system does not currently capture — which is usually where the real work is." },
+        { n: "04", t: "Provider coordination", b: "We sit between your team and your provider's onboarding process, in their technical language and yours, so your finance team is not translating." },
+        { n: "05", t: "Integration and validation", b: "Building and proving the connection, then validating against real invoice cases including the ones constructed to fail." },
+        { n: "06", t: "User acceptance testing", b: "Your team confirms it works the way they actually invoice, not the way the process diagram says they do." },
+        { n: "07", t: "Go-live and staged cutover", b: "In stages, with a rollback position, rather than a single overnight switch across every entity." },
+        { n: "08", t: "Stabilisation", b: "The first full month-end after go-live is the real test. We stay through it." },
+      ],
+      alreadyTitle: "Already appointed a provider?",
+      alreadyBody:
+        "That is a normal starting point and it changes nothing about how we work. We are not going to reopen a decision you have already made and paid for. We work with whichever accredited provider you have appointed, take the specification from there, and get the integration done.",
+      erpTitle: "Already have an ERP?",
+      erpBody:
+        "Having an ERP is not the same as having a completed e-invoicing implementation. Most systems can be made to work; the question is what has to be configured, mapped, tested and changed operationally to get there — and that answer is specific to your instance, not to the product name.",
+      accountantTitle: "Already have an accountant?",
+      accountantBody:
+        "Keep them. Your accountant handles accounting and tax, and nothing here changes that. This is a systems integration project that happens to be driven by a tax regulation, and it needs a different kind of hands.",
+      cta: "Talk about your implementation",
+      ctaSecondary: "Start with an assessment instead",
+    },
+
+    managed: {
+      eyebrow: "Managed compliance operations",
+      h1: "Going live is the middle of this project. Not the end.",
+      lede:
+        "From go-live onward every invoice has to validate, transmit and reconcile, month after month, and the rules will change at least once. Managed operations is the service that keeps that working without it becoming somebody's unofficial second job inside your finance team.",
+      includesTitle: "What we do each month",
+      includes: [
+        { t: "Transmission monitoring", b: "We watch what your provider sends and receives, and check it against what your system believed it issued." },
+        { t: "Rejection resolution", b: "Rejections get found, diagnosed and resolved before they age into a filing problem. Most are data issues, not provider issues." },
+        { t: "Reconciliation", b: "Monthly reconciliation between your ledger and what actually transmitted, so the two do not quietly drift apart." },
+        { t: "Provider management", b: "When something needs raising with your provider, we raise it, in their format, and follow it to closure." },
+        { t: "Regulatory change", b: "When the requirements move, we tell you what it means for your setup specifically and what we are changing." },
+        { t: "Operational reporting", b: "A monthly position you can put in front of an auditor without assembling it first." },
+      ],
+      boundaryNote:
+        "To be precise about the split: your accredited provider performs the transmission and the reporting to the Federal Tax Authority. We monitor it, resolve what breaks on your side, reconcile it against your books, and manage the relationship with them. We do not perform any regulated provider function.",
+      forWhomTitle: "This is worth it if",
+      forWhom: [
+        "Nobody in your finance team currently owns e-invoicing operations, and it shows at month-end",
+        "You are seeing rejections and nobody is systematically resolving them",
+        "Your reconciliation between ledger and transmitted invoices does not reliably match",
+        "You have multiple entities and no consolidated view of whether they are all working",
+        "You went live with an implementation partner who has since disappeared",
+      ],
+      liveTitle: "Already live, and it is not clean?",
+      liveBody:
+        "That is a common starting point and it is a different piece of work from an implementation. We review your current environment, identify what is actually failing, fix it, and then take it on operationally if that is useful. Being live is not the same as being stable.",
+      cta: "Review our current setup",
+      ctaSecondary: "See pricing",
+    },
   },
 
   pillars: {
@@ -740,7 +904,7 @@ const en = {
       },
       {
         q: "What is an Accredited Service Provider (ASP)?",
-        a: "An Accredited Service Provider is a company certified by the UAE government to transmit e-invoices on a business's behalf. Becoming one is a serious undertaking — the Ministry of Finance requires proof of paid-up capital and professional indemnity insurance, ISO/IEC 27001 and ISO 22301 certification, active Peppol certification with a passed conformance test, at least two years of documented experience operating an e-invoicing system, and a 90-working-day accreditation process. Most businesses don't become an ASP themselves; they connect their existing systems to one, which is the service CHS provides.",
+        a: "An Accredited Service Provider is a company certified by the UAE government to transmit e-invoices on a business's behalf. Becoming one is a serious undertaking — the Ministry of Finance requires proof of paid-up capital and professional indemnity insurance, ISO/IEC 27001 and ISO 22301 certification, active Peppol certification with a passed conformance test, at least two years of documented experience operating an e-invoicing system, and a 90-working-day accreditation process. Most businesses don't become an ASP themselves; they connect their existing systems to one. CHS is not an ASP — we do the client-side work of choosing the right one and making the connection function.",
       },
       {
         q: "Is e-invoicing mandatory right now, or can I wait?",
