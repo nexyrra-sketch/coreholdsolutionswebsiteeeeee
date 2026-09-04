@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { DEADLINES } from "@/lib/deadlines";
@@ -195,6 +196,44 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             <p className="mt-16 max-w-2xl border-s-2 border-brass-500 ps-6 font-display text-h3 leading-tight">
               {dict.problem.closing}
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ================= ENTRY SCENARIOS ================= */}
+      <section id="scenarios" className="bg-paper-50 py-section-y">
+        <div className="container-content">
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <Eyebrow>{dict.scenarios.eyebrow}</Eyebrow>
+              <h2 className="font-display text-h2">{dict.scenarios.h2}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-ink-700">{dict.scenarios.intro}</p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16 grid gap-6 lg:grid-cols-2">
+            {dict.scenarios.items.map((item, i) => (
+              <Reveal key={item.n} variant="up" delay={(i % 2) * 90}>
+                <article className="card-lift flex h-full flex-col rounded-md border border-line bg-white p-8 hover:border-brass-400 sm:p-10">
+                  <span className="font-display text-2xl text-brass-500">{item.n}</span>
+                  <p className="mt-4 font-display text-h4 text-ink-950">&ldquo;{item.situation}&rdquo;</p>
+                  <p className="mt-4 text-lg leading-relaxed text-brass-700">{item.response}</p>
+                  <p className="mt-4 text-small leading-relaxed text-ink-600">{item.body}</p>
+                  <div className="mt-auto pt-6">
+                    <Link
+                      href={localePath(locale, "/contact")}
+                      className="text-small font-semibold text-ink-950 underline decoration-brass-400 underline-offset-4 hover:text-brass-700"
+                    >
+                      {item.next} &rarr;
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal variant="fade" delay={120}>
+            <p className="mt-12 max-w-2xl text-lg leading-relaxed text-ink-700">{dict.scenarios.closing}</p>
           </Reveal>
         </div>
       </section>

@@ -8,7 +8,7 @@ const en = {
     shortName: "CHS",
     tagline: "UAE e-invoicing compliance, end to end.",
     ogDescription:
-      "CoreholdSolutions is the independent consultancy for UAE e-invoicing compliance — we establish what the law requires of your business, select and negotiate your accredited provider, architect and build the integration, and run it after go-live.",
+      "CoreholdSolutions is the client-side e-invoicing implementation and compliance partner for UAE businesses — we establish what the law requires of your business, choose and negotiate your accredited provider, build and prove the integration, and stay accountable for it after go-live.",
   },
 
   nav: {
@@ -28,7 +28,7 @@ const en = {
     companyFull: "CoreholdSolutions",
     companyFullAr: "كورهولد سوليوشنز",
     description:
-      "The independent consultancy for UAE e-invoicing compliance — advisory, accredited-provider selection, integration and managed operations, under one team. Not an accredited service provider itself.",
+      "Client-side e-invoicing implementation and compliance for UAE businesses — advisory, accredited-provider selection, integration and managed operations, under one accountable team. Not an accredited service provider itself.",
     quickLinksHeading: "Site",
     resourcesHeading: "Resources",
     contactHeading: "Contact",
@@ -45,10 +45,10 @@ const en = {
     eyebrow: "Federal Decree-Law No. 16 of 2024 · UAE Mandatory E-Invoicing",
     h1: "Every business in the UAE has an e-invoicing deadline. Very few have a plan.",
     subhead:
-      "Federal law now puts every VAT-registered business in the country on a fixed timeline to issue and receive invoices through an accredited provider. CoreholdSolutions is the consultancy that owns that problem end to end — establishing what the law requires of you specifically, selecting the right accredited provider, architecting and building the connection, and running it long after go-live. You keep invoicing the way you always have.",
+      "Federal law now puts every VAT-registered business in the country on a fixed timeline to issue and receive invoices through an accredited provider. Every provider you speak to will recommend its own platform. We sit on your side of that decision — establishing what the law requires of you specifically, choosing the right accredited provider for the systems you already run, building and proving the connection, and staying accountable for it after go-live. For most finance teams, day-to-day invoicing barely changes.",
     ctaPrimary: "Find your deadline",
     ctaSecondary: "How we work",
-    trustLine: "Independent of every accredited provider · Advisory, integration and managed compliance under one team",
+    trustLine: "Client-side, not vendor-side · Advisory, provider selection, integration and managed operations under one accountable team",
     scrollCue: "Scroll",
     questionsHeading: "The three questions we answer for you",
     questions: [
@@ -106,7 +106,7 @@ const en = {
       {
         n: "03",
         title: "We keep you compliant, every month.",
-        body: "Once you're live, a CHS dashboard handles the ongoing sending and receiving of structured invoices, flags anything that gets rejected before it becomes a problem, and reconciles against your own books. You keep invoicing the way you already do — we handle what happens behind it.",
+        body: "Once you're live, your accredited provider transmits and receives the invoices. We watch that it is working: monitoring what goes out and comes back, catching rejections before they age into a filing problem, reconciling against your own books each month, and dealing with the provider when something needs fixing. You keep invoicing the way you already do.",
       },
     ],
     capabilitiesHeading: "Three capabilities, one team",
@@ -174,7 +174,7 @@ const en = {
     },
     scopeLabel: "Where CoreholdSolutions works",
     scopeBody:
-      "Corners 1 and 2, and everything behind them: deciding what you actually need, selecting and appointing the provider, mapping and testing the connection, then running it every month after go-live. Corners 3, 4 and 5 simply happen — provided the first two were built correctly.",
+      "Corners 1 and 2, and everything behind them: deciding what you actually need, selecting and appointing the provider, mapping and testing the connection, then monitoring it every month after go-live. Corners 3, 4 and 5 are handled by the network and the accredited providers on it — which is why getting the first two right is the part that decides whether the rest goes smoothly.",
     jargonNote:
       "Peppol is the network this travels over. PINT-AE is the required data format. You will never have to touch either — but they are what the acronyms in every vendor deck are referring to, and you should not have to pretend to recognise them.",
     cta: "See every term explained",
@@ -273,6 +273,45 @@ const en = {
     closing: "We take all four of those off your desk. That is the entire job.",
   },
 
+  scenarios: {
+    eyebrow: "Where you are right now",
+    h2: "Four situations. All of them are ones we work with.",
+    intro:
+      "Most businesses assume this is a single project with a single starting point. It isn't. People reach us at very different stages, and the useful next step is different for each one.",
+    items: [
+      {
+        n: "01",
+        situation: "We haven't started.",
+        response: "Then start with what you actually owe.",
+        body: "Before anyone shows you a platform, you need your revenue tier, your dates, your entity structure and an honest read on how much work your current systems imply. That is a short, defined piece of work, and it is what the readiness assessment exists for.",
+        next: "Start with a readiness assessment",
+      },
+      {
+        n: "02",
+        situation: "We've already chosen a provider.",
+        response: "Good. That was the easier half.",
+        body: "Choosing a provider does not integrate anything. Your invoice data still has to map correctly into PINT-AE, validate against real cases, survive testing, and cut over without breaking month-end. We work with whichever accredited provider you have appointed, and we are not going to suggest you unpick that decision.",
+        next: "Talk about implementation",
+      },
+      {
+        n: "03",
+        situation: "We're mid-implementation and stuck.",
+        response: "Usually it is the mapping, not the provider.",
+        body: "Stalled implementations tend to fail in the same few places: invoice fields that do not map cleanly, entity structures nobody scoped, validation errors that keep recurring, and no single person who owns the outcome across finance, IT and the provider. We come in at that point more often than at the start.",
+        next: "Get an outside read on it",
+      },
+      {
+        n: "04",
+        situation: "We're already live, but it's not clean.",
+        response: "Then the problem is operations, not compliance.",
+        body: "Being live is not the same as being stable. Rejections that nobody resolves, reconciliation that never quite matches, a provider relationship nobody manages, and no clarity on who fixes it when it breaks at month-end. That is exactly what managed operations is for.",
+        next: "Talk about managed operations",
+      },
+    ],
+    closing:
+      "If none of these describes you, the first conversation is free and short, and it usually ends with a clear answer either way.",
+  },
+
   pillars: {
     eyebrow: "What we do",
     h2: "Four disciplines. One accountable team.",
@@ -335,17 +374,17 @@ const en = {
   independence: {
     eyebrow: "Where we sit",
     h2: "On your side of the table.",
-    body: "CoreholdSolutions is not an accredited service provider, and we are not trying to become one. That is not a limitation we are apologising for — it is the reason our advice is worth anything. An accredited provider recommending an accredited provider is a sales call. We hold no reseller margin on any provider we recommend, so when we tell you one is the right fit, the only thing riding on it is whether we were right.",
+    body: "CoreholdSolutions is not an accredited service provider. We work alongside the accredited network rather than competing with it, and we represent the client's side of the table when a provider is being chosen. An accredited provider recommending an accredited provider is a sales call. We hold no reseller margin on any provider we currently recommend, so when we tell you one is the right fit, the only thing riding on it is whether we were right. If that ever changes — if we enter a commercial arrangement with a named provider — this page will say so before you have to ask.",
     factsHeading: "What accreditation actually demands",
     facts: [
-      "AED 50,000+ in paid-up capital",
-      "AED 2.5 million in professional indemnity insurance",
-      "ISO 27001 and ISO 22301 certification",
-      "Two years of prior e-invoicing track record",
-      "A 90-day accreditation process",
+      "Proof of paid-up capital and professional indemnity insurance",
+      "ISO/IEC 27001 and ISO 22301 certification",
+      "Active Peppol certification and a passed conformance test",
+      "Two years of documented e-invoicing operating experience",
+      "A 90-working-day accreditation process",
     ],
     factsNote:
-      "That is a serious bar, and it is exactly why the accredited network is small and worth choosing carefully. It is also why we work alongside it rather than trying to replace it. If we ever sign a named provider partnership, this site will say so specifically.",
+      "Requirements are set by the Ministry of Finance and are summarised here, not quoted in full — confirm the current criteria directly with the Ministry. It is a serious bar, and it is why the accredited network is small and worth choosing carefully.",
   },
 
   numbers: {
@@ -524,9 +563,9 @@ const en = {
 
   pricing: {
     eyebrow: "Pricing",
-    h1: "Two things you pay for: getting connected, and staying compliant.",
+    h1: "Two things you pay for: getting it built, and keeping it working.",
     intro:
-      "A one-time project to get your systems connected and compliant, then a monthly subscription that keeps every invoice moving correctly. Every figure below is a starting point for the size of business it names — your exact quote depends on invoice volume and how complex your current setup is.",
+      "A one-time implementation to get your systems connected and proven, then a monthly service that keeps it working after go-live. The figures below are starting points, not fixed prices — what you actually pay depends on your entity structure, your systems and your invoice volume, and we scope it properly before quoting.",
     placeholderNotice:
       "Pricing shown is indicative and subject to confirmation on a scoping call.",
     getCompliant: {
@@ -536,7 +575,7 @@ const en = {
         {
           name: "Starter",
           forWhom: "Single entity, QuickBooks / Zoho / Xero, or spreadsheet-based",
-          price: "From AED 4,500",
+          price: "From AED 9,500",
           priceNote: "one-time",
           features: [
             "Revenue-tier & deadline assessment",
@@ -549,7 +588,7 @@ const en = {
         {
           name: "Growth",
           forWhom: "Multiple entities, higher invoice volume, or mixed systems",
-          price: "From AED 9,500",
+          price: "From AED 22,000",
           priceNote: "one-time",
           features: [
             "Everything in Starter",
@@ -580,31 +619,33 @@ const en = {
       tiers: [
         {
           name: "Essential",
-          forWhom: "Up to 100 invoices / month",
-          price: "AED 350",
+          forWhom: "Single entity, standard invoice volume",
+          price: "From AED 1,500",
           priceNote: "per month",
           features: [
-            "Structured invoice generation & transmission",
-            "Sent / received e-invoice dashboard",
-            "Rejection flagging before it becomes a problem",
-            "Monthly reconciliation against your records",
+            "Monitoring of every invoice your provider transmits",
+            "Sent and received e-invoice reporting",
+            "Rejections caught and raised before they age",
+            "Monthly reconciliation against your ledger",
+            "Regulatory changes tracked on your behalf",
           ],
         },
         {
-          name: "Standard",
-          forWhom: "Up to 500 invoices / month",
-          price: "AED 750",
+          name: "Professional",
+          forWhom: "Higher volume, or more than one entity",
+          price: "From AED 3,500",
           priceNote: "per month",
           features: [
             "Everything in Essential",
-            "Priority rejection handling",
+            "Active rejection resolution, not just flagging",
+            "Multi-entity monitoring",
             "Quarterly compliance review",
-            "Email + phone support",
+            "Named contact, one-business-day response",
           ],
         },
         {
-          name: "Enterprise volume",
-          forWhom: "500+ invoices / month, multi-entity reporting",
+          name: "Enterprise",
+          forWhom: "Group structures, high volume, custom SLA",
           price: "Request a quote",
           priceNote: "volume-based",
           features: [
@@ -645,12 +686,12 @@ const en = {
       },
       {
         title: "We say what we are not.",
-        body: "We are not an accredited provider. We hold no reseller margin. We will not promise you a search ranking. Everything we do claim, we can stand behind — and we would rather be accurate than impressive.",
+        body: "We are not an accredited provider. We hold no reseller margin today, and if that ever changes we will publish it rather than let you find out. Everything we do claim, we can stand behind — and we would rather be accurate than impressive.",
       },
     ],
     honesty: {
       title: "Where we stand on accreditation",
-      body: "Becoming an FTA-Accredited Service Provider requires AED 50,000+ in paid-up capital, AED 2.5 million in professional insurance, ISO 27001 and ISO 22301 certification, two years of prior e-invoicing track record, and a 90-day accreditation process. CHS is not an ASP. We partner with one to deliver the connection your business needs. If and when we sign a named accredited-provider partnership, we'll say so here, specifically — until then, we'd rather be accurate than impressive.",
+      body: "Accreditation as a service provider is a substantial undertaking: paid-up capital and professional indemnity insurance, ISO/IEC 27001 and ISO 22301 certification, active Peppol certification, two years of documented e-invoicing operating experience, and a 90-working-day assessment by the Ministry of Finance. CoreholdSolutions is not an accredited service provider. Our clients are connected through accredited providers, and our job is to make sure the right one is chosen and the connection actually works. We are deliberately building the technical and operational depth this work demands, and where that leads over time is a decision for later — we will not describe a future capability as though we already hold it.",
     },
     teamHeading: "Who you'll work with",
     team: {
@@ -699,7 +740,7 @@ const en = {
       },
       {
         q: "What is an Accredited Service Provider (ASP)?",
-        a: "An Accredited Service Provider is a company certified by the UAE government to transmit e-invoices on a business's behalf. Becoming one is a serious undertaking — it requires at least AED 50,000 in paid-up capital, AED 2.5 million in professional insurance, ISO 27001 and ISO 22301 certification, two years of prior e-invoicing experience, and a 90-day accreditation process. Most businesses don't become an ASP themselves; they connect their existing systems to one, which is the service CHS provides.",
+        a: "An Accredited Service Provider is a company certified by the UAE government to transmit e-invoices on a business's behalf. Becoming one is a serious undertaking — the Ministry of Finance requires proof of paid-up capital and professional indemnity insurance, ISO/IEC 27001 and ISO 22301 certification, active Peppol certification with a passed conformance test, at least two years of documented experience operating an e-invoicing system, and a 90-working-day accreditation process. Most businesses don't become an ASP themselves; they connect their existing systems to one, which is the service CHS provides.",
       },
       {
         q: "Is e-invoicing mandatory right now, or can I wait?",
